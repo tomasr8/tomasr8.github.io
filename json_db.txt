@@ -1,0 +1,6 @@
+[
+ ["Phone numbers", ["604-456-789", 1],["+420 777-456-798", 1],["622741231", 0],["6541-456-545", 0]],
+ ["Emails", ["john.doe@gmail.com", 1],["Andy123@yahoo.org", 1],["_ellisredding7@.de", 0],["123456789@@.gmail.com", 0]],
+ ["File names", ["img01.jpg", 1], ["myPicture.jpeg", 1], ["jpg_file.txt", 0], ["__testfile.jpg", 0]],
+ ["Dates", ["07/06/1996", 1], ["17-11-1989", 1], ["26.4.2009", 1], ["6.8. 2011", 1]]
+]
