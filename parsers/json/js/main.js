@@ -6,7 +6,7 @@ $(document).ready(function() {
     false, true,
     null, 123, -6, 6.022e23, "abc",
     { "xyz": [[]], "def": {} }
-  ]`);
+]`);
 
   console.log($("textarea").first().val());
 
