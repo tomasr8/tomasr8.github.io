@@ -2,15 +2,11 @@
 
 $(document).ready(function() {
 
-  $(".code-form > textarea").val(`if(){
-  if(){}elseif(){}else{}
-}elseif(){
-	if(){}else{}
-}elseif(){
-	if(){}
-}else{
-  if(){}elseif(){}
-}`);
+  $(".code-form > textarea").val(`[
+    false, true,
+    null, 123, -6, 6.022e23, "abc",
+    { "xyz": [[]], "def": {} }
+  ]`);
 
   console.log($("textarea").first().val());
 
