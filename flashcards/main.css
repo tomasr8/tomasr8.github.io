@@ -1,5 +1,10 @@
 .container {
   width: 500px;
+  padding-bottom: 0;
+}
+
+section:last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
