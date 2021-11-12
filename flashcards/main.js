@@ -86,14 +86,30 @@ document.addEventListener("DOMContentLoaded", () => {
     setCard()
   })
 
-  scene.addEventListener("click", () => {
-    if (card.classList.contains("flipped")) {
-      index = Math.min(index + 1, data.length - 1)
-      setCard()
+  scene.addEventListener("click", e => {
+    const pos = e.clientX / window.innerWidth
+
+    if (pos < 0.5) {
+      if (card.classList.contains("flipped")) {
+        const [verb, conjugations] = data[index]
+        card.remove()
+        progress.value = Math.max(progress.value - 1, 0)
+        card = getCard(verb, conjugations)
+        scene.appendChild(card)
+      } else {
+        card.classList.toggle("flipped")
+        progress.value = Math.max(progress.value - 1, 0)
+        index = Math.max(index - 1, 0)
+        setCard()
+      }
     } else {
-      Math.min(progress.value + 1, maxValue)
-      progress.value = Math.min(progress.value + 1, maxValue)
-      card.classList.toggle("flipped")
+      if (card.classList.contains("flipped")) {
+        index = Math.min(index + 1, data.length - 1)
+        setCard()
+      } else {
+        progress.value = Math.min(progress.value + 1, maxValue)
+        card.classList.toggle("flipped")
+      }
     }
   })
 
@@ -133,69 +149,4 @@ document.addEventListener("DOMContentLoaded", () => {
       html.setAttribute("data-theme", "dark")
     }
   })
-
-  function handleGesture(touchstartX, touchstartY, touchendX, touchendY) {
-    if (touchendX <= touchstartX) {
-      // console.log("Swiped left")
-      if (card.classList.contains("flipped")) {
-        const [verb, conjugations] = data[index]
-        card.remove()
-        progress.value = Math.max(progress.value - 1, 0)
-        card = getCard(verb, conjugations)
-        scene.appendChild(card)
-      } else {
-        card.classList.toggle("flipped")
-        progress.value = Math.max(progress.value - 1, 0)
-        index = Math.max(index - 1, 0)
-        setCard()
-      }
-    }
-
-    if (touchendX >= touchstartX) {
-      // console.log("Swiped right")
-      if (card.classList.contains("flipped")) {
-        index = Math.min(index + 1, data.length - 1)
-        setCard()
-      } else {
-        progress.value = Math.min(progress.value + 1, maxValue)
-        card.classList.toggle("flipped")
-      }
-    }
-
-    if (touchendY <= touchstartY) {
-      // console.log("Swiped up")
-    }
-
-    if (touchendY >= touchstartY) {
-      // console.log("Swiped down")
-    }
-
-    if (touchendY === touchstartY) {
-      // console.log("Tap")
-    }
-  }
-
-  let touchstartX = 0
-  let touchstartY = 0
-  let touchendX = 0
-  let touchendY = 0
-
-  scene.addEventListener(
-    "touchstart",
-    event => {
-      touchstartX = event.changedTouches[0].screenX
-      touchstartY = event.changedTouches[0].screenY
-    },
-    false
-  )
-
-  scene.addEventListener(
-    "touchend",
-    event => {
-      touchendX = event.changedTouches[0].screenX
-      touchendY = event.changedTouches[0].screenY
-      handleGesture(touchstartX, touchstartY, touchendX, touchendY)
-    },
-    false
-  )
 })
