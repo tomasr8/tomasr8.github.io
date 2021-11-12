@@ -136,18 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleGesture(touchstartX, touchstartY, touchendX, touchendY) {
     if (touchendX <= touchstartX) {
-      console.log("Swiped left")
-      if (card.classList.contains("flipped")) {
-        index = Math.min(index + 1, data.length - 1)
-        setCard()
-      } else {
-        progress.value = Math.min(progress.value + 1, maxValue)
-        card.classList.toggle("flipped")
-      }
-    }
-
-    if (touchendX >= touchstartX) {
-      console.log("Swiped right")
+      // console.log("Swiped left")
       if (card.classList.contains("flipped")) {
         const [verb, conjugations] = data[index]
         card.remove()
@@ -162,16 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if (touchendY <= touchstartY) {
-      console.log("Swiped up")
-    }
-
-    if (touchendY >= touchstartY) {
-      console.log("Swiped down")
-    }
-
-    if (touchendY === touchstartY) {
-      console.log("Tap")
+    if (touchendX >= touchstartX) {
+      // console.log("Swiped right")
       if (card.classList.contains("flipped")) {
         index = Math.min(index + 1, data.length - 1)
         setCard()
@@ -179,6 +160,18 @@ document.addEventListener("DOMContentLoaded", () => {
         progress.value = Math.min(progress.value + 1, maxValue)
         card.classList.toggle("flipped")
       }
+    }
+
+    if (touchendY <= touchstartY) {
+      // console.log("Swiped up")
+    }
+
+    if (touchendY >= touchstartY) {
+      // console.log("Swiped down")
+    }
+
+    if (touchendY === touchstartY) {
+      // console.log("Tap")
     }
   }
 
