@@ -10,7 +10,7 @@ function shuffle(array) {
     currentIndex--
     ;[array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
-      array[currentIndex]
+      array[currentIndex],
     ]
   }
 }
@@ -20,7 +20,7 @@ function getShuffledTenseData(tense) {
     .map(([verb, tenses]) => [verb, tenses[tense]])
     .map(([verb, conjugations]) => [
       verb,
-      conjugations.map(person => person.map(({ text }) => text).join(""))
+      conjugations.map(person => person.map(({ text }) => text).join("")),
     ])
 
   shuffle(data)
@@ -86,14 +86,30 @@ document.addEventListener("DOMContentLoaded", () => {
     setCard()
   })
 
-  scene.addEventListener("click", () => {
-    if (card.classList.contains("flipped")) {
-      index = Math.min(index + 1, data.length - 1)
-      setCard()
+  scene.addEventListener("click", e => {
+    const pos = e.clientX / window.innerWidth
+
+    if (pos < 0.5) {
+      if (card.classList.contains("flipped")) {
+        const [verb, conjugations] = data[index]
+        card.remove()
+        progress.value = Math.max(progress.value - 1, 0)
+        card = getCard(verb, conjugations)
+        scene.appendChild(card)
+      } else {
+        card.classList.toggle("flipped")
+        progress.value = Math.max(progress.value - 1, 0)
+        index = Math.max(index - 1, 0)
+        setCard()
+      }
     } else {
-      Math.min(progress.value + 1, maxValue)
-      progress.value = Math.min(progress.value + 1, maxValue)
-      card.classList.toggle("flipped")
+      if (card.classList.contains("flipped")) {
+        index = Math.min(index + 1, data.length - 1)
+        setCard()
+      } else {
+        progress.value = Math.min(progress.value + 1, maxValue)
+        card.classList.toggle("flipped")
+      }
     }
   })
 
