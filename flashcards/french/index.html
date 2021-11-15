@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta name="description" content="Flashcards for French verb conjugations" />
+    <meta charset="utf-8" />
+    <title>Flashcards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div class="theme-switcher">
+      <fieldset>
+        <label for="switch-theme">
+          <input type="checkbox" id="switch-theme" role="switch" />
+          Switch dark/light mode
+        </label>
+      </fieldset>
+    </div>
+
+    <main class="container">
+      <section>
+        <select id="tenses"></select>
+        <button id="shuffle">Shuffle</button>
+      </section>
+      <section class="scene"></section>
+      <section>
+        <progress value="0" max="100"></progress>
+      </section>
+    </main>
+
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
