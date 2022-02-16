@@ -6,12 +6,12 @@ const setTheme = (theme, toggleBtn = null) => {
   localStorage.setItem("theme", theme)
   document.documentElement.setAttribute("data-theme", theme)
   const checked = theme === "dark"
-  if(toggleBtn) {
+  if (toggleBtn) {
     toggleBtn.checked = checked
   }
 }
 
-if(defaultDark) {
+if (defaultDark) {
   setTheme("dark")
 }
 
@@ -25,16 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (defaultDark) {
-    setTheme("dark")
+    setTheme("dark", toggleBtn)
   } else {
-    setTheme("light")
+    setTheme("light", toggleBtn)
   }
 
   const toggleTheme = () => {
     if (checked) {
-      setTheme("light")
+      setTheme("light", toggleBtn)
     } else {
-      setTheme("dark")
+      setTheme("dark", toggleBtn)
     }
     checked = !checked
   }
