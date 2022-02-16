@@ -3,8 +3,8 @@ const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-schem
 const defaultDark = storedTheme === "dark" || (storedTheme === null && prefersDark)
 
 if (defaultDark) {
-  localStorage.setItem("theme", theme)
-  document.documentElement.setAttribute("data-theme", theme)
+  localStorage.setItem("theme", "dark")
+  document.documentElement.setAttribute("data-theme", "dark")
 }
 
 document.addEventListener("DOMContentLoaded", () => {
