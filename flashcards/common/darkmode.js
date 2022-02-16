@@ -2,44 +2,23 @@ const storedTheme = localStorage.getItem("theme")
 const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
 const defaultDark = storedTheme === "dark" || (storedTheme === null && prefersDark)
 
-const setTheme = (theme, toggleBtn = null) => {
+if (defaultDark) {
   localStorage.setItem("theme", theme)
   document.documentElement.setAttribute("data-theme", theme)
-  const checked = theme === "dark"
-  if (toggleBtn) {
-    toggleBtn.checked = checked
-  }
-}
-
-if (defaultDark) {
-  setTheme("dark")
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  let checked = defaultDark
   const toggleBtn = document.getElementById("switch-theme")
+  toggleBtn.checked = defaultDark
 
   const setTheme = theme => {
     localStorage.setItem("theme", theme)
     document.documentElement.setAttribute("data-theme", theme)
-  }
-
-  if (defaultDark) {
-    setTheme("dark", toggleBtn)
-  } else {
-    setTheme("light", toggleBtn)
-  }
-
-  const toggleTheme = () => {
-    if (checked) {
-      setTheme("light", toggleBtn)
-    } else {
-      setTheme("dark", toggleBtn)
-    }
-    checked = !checked
+    toggleBtn.checked = theme === "dark"
   }
 
   document.getElementById("switch-theme").addEventListener("change", () => {
-    toggleTheme()
+    const theme = toggleBtn.checked ? "dark" : "light"
+    setTheme(theme)
   })
 })
