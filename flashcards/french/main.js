@@ -8,20 +8,19 @@ function shuffle(array) {
   while (currentIndex != 0) {
     randomIndex = Math.floor(Math.random() * currentIndex)
     currentIndex--
-    ;[array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ]
+    ;[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]]
   }
 }
 
 function getShuffledTenseData(tense) {
-  const data = Object.entries(verbs)
-    .map(([verb, tenses]) => [verb, tenses[tense]])
-    .map(([verb, conjugations]) => [
-      verb,
-      conjugations.map(person => person.map(({ text }) => text).join("")),
-    ])
+  const data = Object.entries(verbs).map(([verb, tenses]) => [
+    verb,
+    Object.fromEntries(
+      Object.entries(tenses).map(([tense, conjugations]) => {
+        return [tense, conjugations.map(person => person.map(({ text }) => text).join(""))]
+      })
+    ),
+  ])
 
   shuffle(data)
   return data
@@ -36,9 +35,7 @@ function getCard(front, back) {
       <article class="card-face card-face-back">${cardBack}</article>
     </div>`
 
-  const node = new DOMParser()
-    .parseFromString(card, "text/html")
-    .querySelector("div.card")
+  const node = new DOMParser().parseFromString(card, "text/html").querySelector("div.card")
   return node
 }
 
@@ -51,7 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const progress = document.querySelector("progress")
 
   let index = 0
-  let data = getShuffledTenseData(tenses[0])
+  let tense = tenses[0]
+  let data = getShuffledTenseData(tense)
   const maxValue = data.length
 
   tenses
@@ -64,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .forEach(node => select.appendChild(node))
 
-  const [verb, conjugations] = data[index]
+  const [verb, { [tense]: conjugations }] = data[index]
   card = getCard(verb, conjugations)
   scene.appendChild(card)
 
@@ -72,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
   progress.value = 0
 
   function setCard() {
-    const [verb, conjugations] = data[index]
+    const [verb, { [tense]: conjugations }] = data[index]
     card.remove()
     card = getCard(verb, conjugations)
     scene.appendChild(card)
@@ -86,30 +84,21 @@ document.addEventListener("DOMContentLoaded", () => {
     setCard()
   })
 
-  scene.addEventListener("click", e => {
-    const pos = e.clientX / window.innerWidth
+  select.addEventListener("change", e => {
+    tense = e.target.value
+    if(!card.classList.contains("flipped")) {
+      setCard()
+    }
+  })
 
-    if (pos < 0.5) {
-      if (card.classList.contains("flipped")) {
-        const [verb, conjugations] = data[index]
-        card.remove()
-        progress.value = Math.max(progress.value - 1, 0)
-        card = getCard(verb, conjugations)
-        scene.appendChild(card)
-      } else {
-        card.classList.toggle("flipped")
-        progress.value = Math.max(progress.value - 1, 0)
-        index = Math.max(index - 1, 0)
-        setCard()
-      }
+  scene.addEventListener("click", () => {
+    if (card.classList.contains("flipped")) {
+      index = Math.min(index + 1, data.length - 1)
+      setCard()
     } else {
-      if (card.classList.contains("flipped")) {
-        index = Math.min(index + 1, data.length - 1)
-        setCard()
-      } else {
-        progress.value = Math.min(progress.value + 1, maxValue)
-        card.classList.toggle("flipped")
-      }
+      Math.min(progress.value + 1, maxValue)
+      progress.value = Math.min(progress.value + 1, maxValue)
+      card.classList.toggle("flipped")
     }
   })
 
@@ -120,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (e.key === "ArrowLeft") {
       if (card.classList.contains("flipped")) {
-        const [verb, conjugations] = data[index]
+        const [verb, { [tense]: conjugations }] = data[index]
         card.remove()
         progress.value = Math.max(progress.value - 1, 0)
         card = getCard(verb, conjugations)
@@ -139,14 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
         progress.value = Math.min(progress.value + 1, maxValue)
         card.classList.toggle("flipped")
       }
-    }
-  })
-
-  document.getElementById("switch-theme").addEventListener("change", e => {
-    if (e.currentTarget.checked) {
-      html.setAttribute("data-theme", "light")
-    } else {
-      html.setAttribute("data-theme", "dark")
     }
   })
 })

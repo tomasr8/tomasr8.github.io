@@ -1,5 +1,6 @@
 .container {
   width: 500px;
+  padding-top: 0;
 }
 
 .container button:focus {
@@ -34,7 +35,7 @@
 .card-face {
   position: absolute;
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
   backface-visibility: hidden;
   margin-top: 0;
@@ -51,8 +52,12 @@
 }
 
 .theme-switcher {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 3px;
+  margin: 10px 0;
+}
+
+.theme-switcher > div:first-child {
+  margin-right: 5px;
 }
