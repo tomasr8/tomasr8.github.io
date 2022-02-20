@@ -13,9 +13,12 @@ function getShuffledTenseData(verbs) {
   const data = Object.entries(verbs).map(([verb, tenses]) => [
     verb,
     Object.fromEntries(
-      Object.entries(tenses).map(([tense, conjugations]) => {
-        return [tense, conjugations.map(person => person.map(({ text }) => text).join(""))]
-      })
+      Object.entries(tenses)
+        .map(([tense, conjugations]) => {
+          return tense !== "_translations"
+            ? [tense, conjugations.map(person => person.map(({ text }) => text).join(""))]
+            : [tense, conjugations]
+        })
     ),
   ])
 
@@ -23,12 +26,22 @@ function getShuffledTenseData(verbs) {
   return data
 }
 
-function getCard(front, back) {
-  const cardBack = back.map(item => `<div>${item}</div>`).join("\n")
+function getCard(verb, conjugations, translations) {
+  const emojiMap = {
+    italian: "🇮🇹",
+    english: "🇬🇧",
+    french: "🇫🇷",
+  }
+
+  translations = Object.entries(translations)
+    .map(([language, trs]) => `<div class="translation">${emojiMap[language]}: ${trs.join(", ")}</div>`)
+    .join("")
+  const cardFront = `<div class="verb">${verb}</div><div>${translations}</div>`
+  const cardBack = conjugations.map(item => `<div>${item}</div>`).join("\n")
 
   const card = `
     <div class="card">
-      <article class="card-face card-face-front">${front}</article>
+      <article class="card-face card-face-front">${cardFront}</article>
       <article class="card-face card-face-back">${cardBack}</article>
     </div>`
 
@@ -58,17 +71,17 @@ export default function (verbs, tenses) {
     })
     .forEach(node => select.appendChild(node))
 
-  const [verb, { [tense]: conjugations }] = data[index]
-  card = getCard(verb, conjugations)
+  const [verb, { [tense]: conjugations, _translations: translations = {} }] = data[index]
+  card = getCard(verb, conjugations, translations)
   scene.appendChild(card)
 
   progress.max = maxValue
   progress.value = 0
 
   function setCard() {
-    const [verb, { [tense]: conjugations }] = data[index]
+    const [verb, { [tense]: conjugations, _translations: translations = {} }] = data[index]
     card.remove()
-    card = getCard(verb, conjugations)
+    card = getCard(verb, conjugations, translations)
     scene.appendChild(card)
   }
 
@@ -92,10 +105,10 @@ export default function (verbs, tenses) {
 
     if (pos < 0.5) {
       if (card.classList.contains("flipped")) {
-        const [verb, { [tense]: conjugations }] = data[index]
+        const [verb, { [tense]: conjugations, _translations: translations = {} }] = data[index]
         card.remove()
         progress.value = Math.max(progress.value - 1, 0)
-        card = getCard(verb, conjugations)
+        card = getCard(verb, conjugations, translations)
         scene.appendChild(card)
       } else {
         card.classList.toggle("flipped")
@@ -121,10 +134,10 @@ export default function (verbs, tenses) {
 
     if (e.key === "ArrowLeft") {
       if (card.classList.contains("flipped")) {
-        const [verb, { [tense]: conjugations }] = data[index]
+        const [verb, { [tense]: conjugations, _translations: translations = {} }] = data[index]
         card.remove()
         progress.value = Math.max(progress.value - 1, 0)
-        card = getCard(verb, conjugations)
+        card = getCard(verb, conjugations, translations)
         scene.appendChild(card)
       } else {
         card.classList.toggle("flipped")
