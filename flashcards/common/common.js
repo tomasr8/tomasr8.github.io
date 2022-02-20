@@ -34,7 +34,7 @@ function getCard(verb, conjugations, translations) {
   }
 
   translations = Object.entries(translations)
-    .map(([language, trs]) => `<div class="translation">${emojiMap[language]}: ${trs.join(", ")}</div>`)
+    .map(([language, trs]) => `<div class="translation">${emojiMap[language]} ${trs.join(", ")}</div>`)
     .join("")
   const cardFront = `<div class="verb">${verb}</div><div>${translations}</div>`
   const cardBack = conjugations.map(item => `<div>${item}</div>`).join("\n")
