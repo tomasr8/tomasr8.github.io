@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script type="module" src="../common/darkmode.js"></script>
+  <head>
+    <meta name="description" content="Flashcards for Czech words and phrases" />
+    <meta charset="utf-8" />
+    <title>Flashcards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css" />
+    <link rel="stylesheet" href="../common/common.css" />
+  </head>
+
+  <body>
+    <div class="theme-switcher">
+      <div>☀️</div>
+      <div>
+        <input type="checkbox" id="switch-theme" role="switch" />
+      </div>
+      <div>🌒</div>
+    </div>
+
+    <main class="container">
+      <section>
+        <select id="tenses"></select>
+        <button id="shuffle">Shuffle</button>
+      </section>
+      <section class="scene"></section>
+      <section>
+        <progress value="0" max="100"></progress>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
