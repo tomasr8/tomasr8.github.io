@@ -1,0 +1,25 @@
+{
+  "name": "tomasr8.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass:watch": "node-sass phrases/main.scss -wo phrases/public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomasr8/tomasr8.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomasr8/tomasr8.github.io/issues"
+  },
+  "homepage": "https://github.com/tomasr8/tomasr8.github.io#readme",
+  "dependencies": {
+    "connect-livereload": "^0.6.1",
+    "express": "^4.18.1",
+    "livereload": "^0.9.3",
+    "node-sass": "^7.0.1"
+  }
+}

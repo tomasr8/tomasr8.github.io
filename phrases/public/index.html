@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script type="module" src="darkmode.js"></script>
+  <head>
+    <meta
+      name="description"
+      content="Flashcards for phrases in multiple languages"
+    />
+    <meta charset="utf-8" />
+    <title>Flashcards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <div class="theme-switcher">
+      <div>☀️</div>
+      <div>
+        <input type="checkbox" id="switch-theme" role="switch" />
+      </div>
+      <div>🌒</div>
+    </div>
+    <main class="container">
+      <section class="language-selection">
+        <div>From</div>
+        <select id="sourceLang">
+          <option value="en" selected>🇬🇧</option>
+          <option value="cs">🇨🇿</option>
+          <option value="it">🇮🇹</option>
+          <option value="fr">🇫🇷</option>
+        </select>
+        <div>To</div>
+        <select id="targetLang">
+          <option value="en">🇬🇧</option>
+          <option value="cs">🇨🇿</option>
+          <option value="it" selected>🇮🇹</option>
+          <option value="fr">🇫🇷</option>
+        </select>
+        <button id="load">Load</button>
+      </section>
+      <section class="scene">
+        <article class="placeholder">
+          Choose a language pair and load the dataset!
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

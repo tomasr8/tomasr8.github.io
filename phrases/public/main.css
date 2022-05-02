@@ -1,0 +1,64 @@
+.container {
+  max-width: 500px;
+  padding-top: 0; }
+
+.container button:focus {
+  --background-color: var(--primary-hover);
+  --border-color: var(--primary-hover);
+  --box-shadow: none; }
+
+.container button:active {
+  --background-color: var(--primary);
+  --border-color: var(--primary); }
+
+.container select:focus {
+  --box-shadow: none; }
+
+.container section:last-child {
+  margin-bottom: 0; }
+
+.scene {
+  width: 100%;
+  height: 400px; }
+  .scene #original {
+    margin-bottom: 2em; }
+  .scene #translation span {
+    transition: all 0.2s; }
+  .scene #translation.hidden span {
+    color: purple;
+    background-color: purple; }
+
+@media only screen and (max-width: 768px) {
+  .container .scene {
+    max-height: 300px; } }
+
+article.card {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  margin: 0; }
+
+article.placeholder {
+  width: 100%;
+  height: 100%;
+  margin: 0; }
+
+.theme-switcher {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 3px;
+  margin: 10px 16px 10px 0; }
+
+.theme-switcher > div:first-child {
+  margin-right: 5px; }
+
+.language-selection {
+  display: flex;
+  align-items: center; }
+  .language-selection select,
+  .language-selection button {
+    margin-bottom: 0; }
+  .language-selection select {
+    width: 100px;
+    border: 0;
+    padding: 5px; }
