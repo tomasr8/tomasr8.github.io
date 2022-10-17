@@ -1,0 +1,73 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#canvas {
+  width: 100vw;
+  height: 100vh;
+}
+
+#controls-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.5em;
+  transition: all 0.4s ease-in-out;
+}
+
+#controls-wrapper.hidden {
+  right: -320px;
+}
+
+#controls {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #d1007f;
+  font-size: 1.1em;
+  padding: 0.5em;
+  font-family: monospace;
+  width: 320px;
+}
+
+#controls table td {
+  padding: 0.3em 0.2em;
+  min-width: 50px;
+}
+
+#controls table td.values {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+#hide {
+  font-family: monospace;
+  font-size: 3em;
+  padding: 0;
+  border-radius: 0;
+  border: 0;
+  background: transparent;
+  color: #d1007f;
+  margin-top: -0.2em;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-style: italic;
+}
+
+#stars {
+  padding: 0.5em;
+  display: flex;
+  gap: 1em;
+}

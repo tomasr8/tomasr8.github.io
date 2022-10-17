@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Superluminal</title>
+    <link href="main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <canvas id="canvas"></canvas>
+    <section id="controls-wrapper">
+      <div>
+        <button type="button" id="hide">»</button>
+      </div>
+      <div id="controls">
+        <div class="title">
+          <span><s>&nbsp;&nbsp;S</s>uperlumina<s>l&nbsp;&nbsp;</s></span>
+        </div>
+        <table>
+          <tbody>
+            <tr>
+              <td>Stars</td>
+              <td class="values">
+                <div><input type="radio" id="100" value="100" name="stars" /><label for="100">100</label></div>
+                <div>
+                  <input type="radio" id="1000" value="1000" name="stars" checked /><label for="1000">1000</label>
+                </div>
+                <div><input type="radio" id="10000" value="10000" name="stars" /><label for="10000">10000</label></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Speed</td>
+              <td class="values">
+                <input type="range" id="speed" value="10" min="0.1" max="20" step="0.01" />
+                <span id="speed-value">10</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Spread</td>
+              <td class="values">
+                <input type="range" id="spread" value="100" min="0.5" max="200" step="0.25" />
+                <span id="spread-value">10</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Rotation</td>
+              <td class="values">
+                <input type="range" id="rotation" value="0" min="0" max="0.03" step="0.0005" />
+                <span id="rotation-value">0</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Length</td>
+              <td class="values">
+                <input type="range" id="length" value="1" min="0.1" max="10" step="0.01" />
+                <span id="length-value">1</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Width</td>
+              <td class="values">
+                <input type="range" id="width" value="2" min="0.1" max="10" step="0.01" />
+                <span id="width-value">2</span>
+              </td>
+            </tr>
+            <tr>
+              <td>Color</td>
+              <td><input type="color" id="color" value="#ffffff" /></td>
+            </tr>
+            <tr>
+              <td>Background</td>
+              <td><input type="color" id="backgroundColor" value="#000000" /></td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <hr />
+          <p><span style="color: #ff9500">Hint:</span> use the arrow keys or WASD to rotate the camera.</p>
+          <p>Check the <a href="github.com/tomasr8/tomasr8.github.io/superluminal">github repo</a> too see how it's done.</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="main.js"></script>
+  </body>
+</html>
