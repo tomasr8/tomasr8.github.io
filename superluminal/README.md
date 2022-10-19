@@ -2,7 +2,7 @@
 
 ![](superluminal.gif)
 
-## *Try it out [here](tomasr8.github.io/superluminal)*.
+## *Try it out [here](https://tomasr8.github.io/superluminal)*.
 
 ### Explanation
 
