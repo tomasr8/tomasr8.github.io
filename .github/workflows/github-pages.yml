@@ -23,11 +23,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      # Build CSS
-      - name: Build CSS
+      # Build website
+      - name: Build website
         run: |
          npm ci
-         npm build
+         npm run build
          mv public _site
 
       - uses: actions/upload-pages-artifact@v1
