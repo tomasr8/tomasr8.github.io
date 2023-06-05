@@ -1,0 +1,102 @@
+html,
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "cesko.digital", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: #f7f5e8;
+}
+
+@font-face {
+  font-family: "cesko.digital";
+  src: url("cesko.digital-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "cesko.digital.mono";
+  src: url("cesko.digital.mono-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+nav {
+  width: 800px;
+  margin: 2em auto 4em auto;
+  display: flex;
+  justify-content: space-between;
+  font-family: "cesko.digital.mono", monospace;
+  color: #eb2b69;
+}
+
+a {
+  color: #1b70b1;
+}
+
+a:visited {
+  color: #1b70b1;
+}
+
+article {
+  max-width: 800px;
+  margin: 2em auto;
+  line-height: 1.5em;
+  color: #333;
+}
+
+article.project {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2b9cb;
+}
+
+article.project .content .title {
+  margin-bottom: 1em;
+  font-size: 20px;
+}
+
+article.project .image-container img,
+article.project .image-container video {
+  max-width: 500px;
+  max-height: 250px;
+  object-fit: contain;
+  display: block;
+}
+
+article.project .content {
+  padding: 1em;
+}
+
+footer {
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+footer div {
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+}
+footer div:nth-child(1) {
+  background-color: #099698;
+}
+footer div:nth-child(2) {
+  background-color: #ea8b23;
+}
+footer div:nth-child(3) {
+  background-color: #eb2b69;
+}
+footer div:nth-child(4) {
+  background-color: #1b70b1;
+}
+footer div:nth-child(5) {
+  background-color: #831f2d;
+}
+
+/*# sourceMappingURL=main.css.map */
