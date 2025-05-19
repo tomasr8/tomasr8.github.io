@@ -8,6 +8,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: var(--color-slate-900);
+}
+
 /* #about {
     position: relative;
 }

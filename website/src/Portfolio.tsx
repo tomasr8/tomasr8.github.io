@@ -1,13 +1,12 @@
 import React from "react"
 import { useState, useEffect } from 'react';
-import { Github, Twitter, Linkedin, Mail, Menu, X, Moon, Sun } from 'lucide-react';
+import { Github, Linkedin, Mail, Menu, X, Moon, Sun } from 'lucide-react';
+
+import Navbar from "./Navbar";
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-  const [contactName, setContactName] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
-  const [contactMessage, setContactMessage] = useState('');
   
   // Initialize darkMode based on user preference or system preference
   useEffect(() => {
@@ -34,75 +33,14 @@ export default function Portfolio() {
     setDarkMode(!darkMode);
   };
 
-  const handleContactSubmit = () => {
-    console.log('Contact form submitted', { contactName, contactEmail, contactMessage });
-    // In a real application, you would handle the form submission here
-    
-    // Reset fields
-    setContactName('');
-    setContactEmail('');
-    setContactMessage('');
-    
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-  };
-
   return (
     <div className={`min-h-screen ${darkMode ? 'dark bg-slate-900 text-slate-100' : 'bg-slate-50 text-slate-800'} font-sans transition-colors duration-300`}>
-      {/* Navigation */}
-      <nav className={`${darkMode ? 'bg-slate-800 shadow-slate-700/30' : 'bg-white shadow-sm'} fixed w-full z-10 transition-colors duration-300`}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <span className="text-xl font-bold text-indigo-500">Tomas Roun</span>
-            </div>
-            
-            {/* Desktop navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#about" className={`${darkMode ? 'hover:text-indigo-400' : 'hover:text-indigo-600'} transition-colors`}>About</a>
-              <a href="#projects" className={`${darkMode ? 'hover:text-indigo-400' : 'hover:text-indigo-600'} transition-colors`}>Projects</a>
-              
-              {/* Dark mode toggle */}
-              <button 
-                onClick={toggleDarkMode} 
-                className={`p-2 rounded-full ${darkMode ? 'bg-slate-700 text-yellow-300 hover:bg-slate-600' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'} transition-colors`}
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-            </div>
-            
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center space-x-4">
-              {/* Dark mode toggle for mobile */}
-              <button 
-                onClick={toggleDarkMode} 
-                className={`p-2 rounded-full ${darkMode ? 'bg-slate-700 text-yellow-300' : 'bg-slate-200 text-slate-700'} transition-colors`}
-                aria-label="Toggle dark mode"
-              >
-                {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-              
-              <button onClick={toggleMobileMenu} className={`p-2 rounded-md ${darkMode ? 'text-slate-300 hover:text-indigo-400' : 'text-slate-700 hover:text-indigo-600'} transition-colors`}>
-                {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-        </div>
-        
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <div className={`md:hidden ${darkMode ? 'bg-slate-800 shadow-lg shadow-slate-700/30' : 'bg-white shadow-lg'} transition-colors duration-300`}>
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="#about" className={`block px-3 py-2 rounded-md ${darkMode ? 'hover:bg-slate-700 hover:text-indigo-400' : 'hover:bg-indigo-50 hover:text-indigo-600'} transition-colors`}>About</a>
-              <a href="#skills" className={`block px-3 py-2 rounded-md ${darkMode ? 'hover:bg-slate-700 hover:text-indigo-400' : 'hover:bg-indigo-50 hover:text-indigo-600'} transition-colors`}>Skills</a>
-              <a href="#projects" className={`block px-3 py-2 rounded-md ${darkMode ? 'hover:bg-slate-700 hover:text-indigo-400' : 'hover:bg-indigo-50 hover:text-indigo-600'} transition-colors`}>Projects</a>
-              <a href="#contact" className={`block px-3 py-2 rounded-md ${darkMode ? 'hover:bg-slate-700 hover:text-indigo-400' : 'hover:bg-indigo-50 hover:text-indigo-600'} transition-colors`}>Contact</a>
-            </div>
-          </div>
-        )}
-      </nav>
-      
+      <Navbar
+        darkMode={darkMode}
+        mobileMenuOpen={mobileMenuOpen}
+        toggleDarkMode={toggleDarkMode}
+        toggleMobileMenu={toggleMobileMenu}
+      />
       {/* Hero section */}
       <section id="about" className="pt-24 pb-16 md:pt-32">
         {/* <div id="test"></div> */}
@@ -142,24 +80,30 @@ export default function Portfolio() {
           <h2 className="text-3xl font-bold mb-12 text-center">Open Source Contributions</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <ul className="max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+            <ul className="max-w-lg space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
                 <li className={`text-xl ${darkMode ? 'text-slate-300' : 'text-slate-600'} max-w-xl transition-colors duration-300`}>
-                    Co-maintainer of <a href="https://github.com/indico/indico" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>Indico</a>
+                    <a href="https://github.com/indico/indico" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>Indico</a> core developer for the last 4+ years
                 </li>
                 <li className={`text-xl ${darkMode ? 'text-slate-300' : 'text-slate-600'} max-w-xl transition-colors duration-300`}>
-                    Contributor to <a href="https://github.com/python/cpython" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>CPython</a>
+                    <a href="https://github.com/python/cpython" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>CPython</a> contributor and member of the triage team
                 </li>
                 <li className={`text-xl ${darkMode ? 'text-slate-300' : 'text-slate-600'} max-w-xl transition-colors duration-300`}>
-                    Contributor to <a href="https://github.com/python-babel/babel" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>Babel</a>
+                    <a href="https://github.com/python-babel/babel" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>Babel</a> contributor
                 </li>
                 <li className={`text-xl ${darkMode ? 'text-slate-300' : 'text-slate-600'} max-w-xl transition-colors duration-300`}>
-                <a href="https://github.com/pycqa/flake8-pyi" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>flake8</a>
+                <a href="https://github.com/pycqa/flake8-pyi" target="_blank" className={`${darkMode ? 'text-indigo-400 hover:text-indigo-300' : 'text-indigo-600 hover:text-indigo-700'} font-medium transition-colors`}>flake8</a> contributor
                 </li>
                 <li className={`text-xl ${darkMode ? 'text-slate-300' : 'text-slate-600'} max-w-xl transition-colors duration-300`}>
                   And many others including ruff, pyodide, ..
                 </li>
             </ul>
-          </div>          
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <img src="/src/python.svg"></img>
+            <img src="/src/indico.svg"></img>
+            <img src="/src/babel.png"></img>
+          </div>      
         </div>
       </section>
 
