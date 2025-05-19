@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, Menu, X, Moon, Sun } from 'lucide-react';
 
 import Navbar from "./Navbar";
+import About from "./About";
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -42,38 +43,7 @@ export default function Portfolio() {
         toggleMobileMenu={toggleMobileMenu}
       />
       {/* Hero section */}
-      <section id="about" className="pt-24 pb-16 md:pt-32">
-        {/* <div id="test"></div> */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:flex items-center gap-12">
-            <div className="flex-1 mb-8 lg:mb-0">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">Hi, I'm Tomas</h1>
-              <h2 className="text-2xl md:text-3xl text-indigo-500 font-medium mb-6">Full Stack Developer</h2>
-              <p className={`text-lg ${darkMode ? 'text-slate-300' : 'text-slate-600'} mb-8 max-w-xl transition-colors duration-300`}>
-                I build scalable web applications with modern technologies. 
-                Passionate about crafting clean code and creating intuitive user experiences.
-              </p>
-              <div className="flex gap-4">
-                  <a href="#" className={`p-2 ${darkMode ? 'bg-slate-700 text-indigo-400 hover:bg-slate-600' : 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200'} rounded-full transition-colors duration-300`}>
-                    <Github size={24} />
-                  </a>
-                  <a href="#" className={`p-2 ${darkMode ? 'bg-slate-700 text-indigo-400 hover:bg-slate-600' : 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200'} rounded-full transition-colors duration-300`}>
-                    <Linkedin size={24} />
-                  </a>
-                  <a href="#" className={`p-2 ${darkMode ? 'bg-slate-700 text-indigo-400 hover:bg-slate-600' : 'bg-indigo-100 text-indigo-600 hover:bg-indigo-200'} rounded-full transition-colors duration-300`}>
-                    <Mail size={24}/>
-                  </a>
-              </div>
-            </div>
-            <div className="flex-1 flex justify-center">
-              <div className={`w-64 h-64 rounded-full ${darkMode ? 'bg-indigo-900/50 text-indigo-400' : 'bg-indigo-100 text-indigo-600'} flex items-center justify-center text-6xl font-bold transition-colors duration-300`}>
-                <img src="/src/me.jpg" alt="Tomas Roun" className="rounded-full w-64 h-64 object-cover" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
+      <About darkMode={darkMode} />
       {/* Featured projects section */}
       <section id="oss" className={`py-16 ${darkMode ? 'bg-slate-800' : 'bg-white'} transition-colors duration-300`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
