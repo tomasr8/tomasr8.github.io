@@ -21,9 +21,9 @@ export default function Navbar({
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <span className="text-xl font-bold text-indigo-500">
+            <a className="text-xl font-bold text-indigo-500" href="#about">
               Tomas Roun
-            </span>
+            </a>
           </div>
 
           {/* Desktop navigation */}
@@ -48,7 +48,7 @@ export default function Navbar({
             {/* Dark mode toggle */}
             <button
               onClick={toggleDarkMode}
-              className={`p-2 rounded-full ${
+              className={`p-2 rounded-full cursor-pointer ${
                 darkMode
                   ? "bg-slate-700 text-yellow-300 hover:bg-slate-600"
                   : "bg-slate-200 text-slate-700 hover:bg-slate-300"

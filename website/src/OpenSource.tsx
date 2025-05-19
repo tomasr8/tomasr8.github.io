@@ -23,6 +23,7 @@ export default function OpenSource({ darkMode }: { darkMode: boolean }) {
               <a
                 href="https://github.com/indico/indico"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={`${
                   darkMode
                     ? "text-indigo-400 hover:text-indigo-300"
@@ -41,6 +42,7 @@ export default function OpenSource({ darkMode }: { darkMode: boolean }) {
               <a
                 href="https://github.com/python/cpython"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={`${
                   darkMode
                     ? "text-indigo-400 hover:text-indigo-300"
@@ -59,6 +61,7 @@ export default function OpenSource({ darkMode }: { darkMode: boolean }) {
               <a
                 href="https://github.com/python-babel/babel"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={`${
                   darkMode
                     ? "text-indigo-400 hover:text-indigo-300"
@@ -77,6 +80,7 @@ export default function OpenSource({ darkMode }: { darkMode: boolean }) {
               <a
                 href="https://github.com/pycqa/flake8-pyi"
                 target="_blank"
+                rel="noopener noreferrer"
                 className={`${
                   darkMode
                     ? "text-indigo-400 hover:text-indigo-300"

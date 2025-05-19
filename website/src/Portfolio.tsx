@@ -29,13 +29,8 @@ export default function Portfolio() {
     localStorage.setItem("darkMode", darkMode.toString())
   }, [darkMode])
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen)
-  }
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode)
-  }
+  const toggleDarkMode = () => setDarkMode(dark => !dark)
+  const toggleMobileMenu = () => setMobileMenuOpen(open => !open)
 
   return (
     <div
