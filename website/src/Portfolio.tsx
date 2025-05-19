@@ -1,6 +1,5 @@
 import React from "react"
 import { useState, useEffect } from "react"
-import { Github, Linkedin, Mail, Menu, X, Moon, Sun } from "lucide-react"
 
 import Navbar from "./Navbar"
 import About from "./About"
