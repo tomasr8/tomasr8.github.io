@@ -1,4 +1,5 @@
 import React from "react"
+import { GitPullRequestArrow } from "lucide-react"
 
 export default function OpenSource({ darkMode }: { darkMode: boolean }) {
   return (
@@ -13,8 +14,8 @@ export default function OpenSource({ darkMode }: { darkMode: boolean }) {
           Open Source Contributions
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <ul className="max-w-lg space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+        <div className="grid grid-cols-1">
+          <ul className="max-w-3xl space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
             <li
               className={`text-xl ${
                 darkMode ? "text-slate-300" : "text-slate-600"
@@ -33,6 +34,13 @@ export default function OpenSource({ darkMode }: { darkMode: boolean }) {
                 Indico
               </a>{" "}
               core developer for the last 4+ years
+              <a
+                href="#"
+                className="bg-purple-100 hover:bg-purple-200 text-purple-800 text-xs font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-purple-400 border border-purple-400 inline-flex items-center justify-center"
+              >
+                <GitPullRequestArrow className="w-5 h-5 me-2" /> See
+                contributions
+              </a>
             </li>
             <li
               className={`text-xl ${

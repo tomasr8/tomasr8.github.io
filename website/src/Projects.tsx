@@ -11,38 +11,11 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ProjectCard
             darkMode={darkMode}
-            title="Just travelling through space.."
-            description="An immersive simulation of a ship traveling through space done using only 2D canvas to avoid having to use WebGL. Source here."
-            technologies={["React", "Node.js", "MongoDB"]}
-            link="#about"
-            img={
-              <img
-                src="/src/superluminal.gif"
-                className="w-full h-full object-cover"
-              />
-            }
-          />
-
-          <ProjectCard
-            darkMode={darkMode}
             title="PyJSX"
             description="A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, product filtering, and payment integration."
             technologies={["React", "Node.js", "MongoDB"]}
             link="#about"
-          />
-
-          <ProjectCard
-            darkMode={darkMode}
-            title="LP Solver"
-            description="No fuss Linear Programming solver with a friendly API. Uses the simplex algorithm. "
-            technologies={["Python"]}
-            link="#about"
-            img={
-              <img
-                src="/src/pivotal.svg"
-                className="w-full h-full object-contain"
-              />
-            }
+            img={null}
           />
 
           <ProjectCard
@@ -57,6 +30,34 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
                 controls
                 className="w-full h-full object-contain"
               ></video>
+            }
+          />
+
+          <ProjectCard
+            darkMode={darkMode}
+            title="Just travelling through space.."
+            description="An immersive simulation of a ship traveling through space done using only 2D canvas to avoid having to use WebGL. Source here."
+            technologies={["React", "Node.js", "MongoDB"]}
+            link="#about"
+            img={
+              <img
+                src="/src/superluminal.gif"
+                className="w-full h-full object-cover"
+              />
+            }
+          />
+
+          <ProjectCard
+            darkMode={darkMode}
+            title="LP Solver"
+            description="No fuss Linear Programming solver with a friendly API. Uses the simplex algorithm. "
+            technologies={["Python"]}
+            link="#about"
+            img={
+              <img
+                src="/src/pivotal.svg"
+                className="w-full h-full object-contain"
+              />
             }
           />
         </div>
