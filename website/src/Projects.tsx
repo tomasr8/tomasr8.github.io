@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactNode } from "react"
 
 export default function Projects({ darkMode }: { darkMode: boolean }) {
   return (
@@ -9,225 +9,56 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div
-            className={`${
-              darkMode ? "bg-slate-800 shadow-slate-700/30" : "bg-white"
-            } p-6 rounded-lg shadow-md transition-colors duration-300`}
-          >
-            <div
-              className={`h-48 ${
-                darkMode ? "bg-slate-700" : "bg-indigo-100"
-              } rounded-md mb-4 flex items-center justify-center ${
-                darkMode ? "text-indigo-400" : "text-indigo-400"
-              } transition-colors duration-300`}
-            >
-              Project Preview
-            </div>
-            <h3 className="text-xl font-bold mb-2">E-commerce Platform</h3>
-            <p
-              className={`${
-                darkMode ? "text-slate-300" : "text-slate-600"
-              } mb-4 transition-colors duration-300`}
-            >
-              A full-stack e-commerce solution with React, Node.js, and MongoDB.
-              Features include user authentication, product filtering, and
-              payment integration.
-            </p>
-            <div className="flex gap-2">
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                React
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                Node.js
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                MongoDB
-              </span>
-            </div>
-          </div>
+          <ProjectCard
+            darkMode={darkMode}
+            title="Just travelling through space.."
+            description="An immersive simulation of a ship traveling through space done using only 2D canvas to avoid having to use WebGL. Source here."
+            technologies={["React", "Node.js", "MongoDB"]}
+            link="#about"
+            img={
+              <img
+                src="/src/superluminal.gif"
+                className="w-full h-full object-cover"
+              />
+            }
+          />
 
-          <div
-            className={`${
-              darkMode ? "bg-slate-800 shadow-slate-700/30" : "bg-white"
-            } p-6 rounded-lg shadow-md transition-colors duration-300`}
-          >
-            <div
-              className={`h-48 ${
-                darkMode ? "bg-slate-700" : "bg-indigo-100"
-              } rounded-md mb-4 flex items-center justify-center ${
-                darkMode ? "text-indigo-400" : "text-indigo-400"
-              } transition-colors duration-300`}
-            >
-              Project Preview
-            </div>
-            <h3 className="text-xl font-bold mb-2">Task Management App</h3>
-            <p
-              className={`${
-                darkMode ? "text-slate-300" : "text-slate-600"
-              } mb-4 transition-colors duration-300`}
-            >
-              A collaborative task management application built with TypeScript,
-              React, and Firebase. Features real-time updates, drag-and-drop
-              interface, and team collaboration tools.
-            </p>
-            <div className="flex gap-2">
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                TypeScript
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                React
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                Firebase
-              </span>
-            </div>
-          </div>
+          <ProjectCard
+            darkMode={darkMode}
+            title="PyJSX"
+            description="A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, product filtering, and payment integration."
+            technologies={["React", "Node.js", "MongoDB"]}
+            link="#about"
+          />
 
-          <div
-            className={`${
-              darkMode ? "bg-slate-800 shadow-slate-700/30" : "bg-white"
-            } p-6 rounded-lg shadow-md transition-colors duration-300`}
-          >
-            <div
-              className={`h-48 ${
-                darkMode ? "bg-slate-700" : "bg-indigo-100"
-              } rounded-md mb-4 flex items-center justify-center ${
-                darkMode ? "text-indigo-400" : "text-indigo-400"
-              } transition-colors duration-300`}
-            >
-              Project Preview
-            </div>
-            <h3 className="text-xl font-bold mb-2">E-commerce Platform</h3>
-            <p
-              className={`${
-                darkMode ? "text-slate-300" : "text-slate-600"
-              } mb-4 transition-colors duration-300`}
-            >
-              A full-stack e-commerce solution with React, Node.js, and MongoDB.
-              Features include user authentication, product filtering, and
-              payment integration.
-            </p>
-            <div className="flex gap-2">
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                React
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                Node.js
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                MongoDB
-              </span>
-            </div>
-          </div>
+          <ProjectCard
+            darkMode={darkMode}
+            title="LP Solver"
+            description="No fuss Linear Programming solver with a friendly API. Uses the simplex algorithm. "
+            technologies={["Python"]}
+            link="#about"
+            img={
+              <img
+                src="/src/pivotal.svg"
+                className="w-full h-full object-contain"
+              />
+            }
+          />
 
-          <div
-            className={`${
-              darkMode ? "bg-slate-800 shadow-slate-700/30" : "bg-white"
-            } p-6 rounded-lg shadow-md transition-colors duration-300`}
-          >
-            <div
-              className={`h-48 ${
-                darkMode ? "bg-slate-700" : "bg-indigo-100"
-              } rounded-md mb-4 flex items-center justify-center ${
-                darkMode ? "text-indigo-400" : "text-indigo-400"
-              } transition-colors duration-300`}
-            >
-              Project Preview
-            </div>
-            <h3 className="text-xl font-bold mb-2">Task Management App</h3>
-            <p
-              className={`${
-                darkMode ? "text-slate-300" : "text-slate-600"
-              } mb-4 transition-colors duration-300`}
-            >
-              A collaborative task management application built with TypeScript,
-              React, and Firebase. Features real-time updates, drag-and-drop
-              interface, and team collaboration tools.
-            </p>
-            <div className="flex gap-2">
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                TypeScript
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                React
-              </span>
-              <span
-                className={`px-3 py-1 ${
-                  darkMode
-                    ? "bg-indigo-900/30 text-indigo-400"
-                    : "bg-indigo-100 text-indigo-600"
-                } text-sm rounded-full transition-colors duration-300`}
-              >
-                Firebase
-              </span>
-            </div>
-          </div>
+          <ProjectCard
+            darkMode={darkMode}
+            title="QR codes from scratch with OpenCV and Python"
+            description="A library and a CLI tool for generating and decoding a custom matrix barcode similar to a QR code."
+            technologies={["Python", "OpenCV"]}
+            link="#about"
+            img={
+              <video
+                src="src/example.mp4"
+                controls
+                className="w-full h-full object-contain"
+              ></video>
+            }
+          />
         </div>
 
         <div className="mt-10 text-center">
@@ -244,5 +75,64 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
         </div>
       </div>
     </section>
+  )
+}
+
+function ProjectCard({
+  darkMode,
+  title,
+  description,
+  technologies,
+  link,
+  img,
+}: {
+  darkMode: boolean
+  title: string
+  description: string
+  technologies: string[]
+  link: string
+  img: ReactNode
+}) {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${
+        darkMode ? "bg-slate-800 shadow-slate-700/30" : "bg-white"
+      } p-6 rounded-lg shadow-md transition-colors duration-300`}
+    >
+      <div
+        className={`h-48 ${
+          darkMode ? "bg-slate-700" : "bg-indigo-100"
+        } rounded-md mb-4 flex items-center justify-center ${
+          darkMode ? "text-indigo-400" : "text-indigo-400"
+        } transition-colors duration-300`}
+      >
+        {img}
+      </div>
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p
+        className={`${
+          darkMode ? "text-slate-300" : "text-slate-600"
+        } mb-4 transition-colors duration-300`}
+      >
+        {description}
+      </p>
+      <div className="flex gap-2">
+        {technologies.map(tech => (
+          <span
+            key={tech}
+            className={`px-3 py-1 ${
+              darkMode
+                ? "bg-indigo-900/30 text-indigo-400"
+                : "bg-indigo-100 text-indigo-600"
+            } text-sm rounded-full transition-colors duration-300`}
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </a>
   )
 }
