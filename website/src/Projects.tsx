@@ -50,13 +50,41 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
           <ProjectCard
             darkMode={darkMode}
             title="LP Solver"
-            description="No fuss Linear Programming solver with a friendly API. Uses the simplex algorithm. "
+            description="No fuss Linear Programming solver with a friendly API. Uses the simplex algorithm."
             technologies={["Python"]}
             link="#about"
             img={
               <img
                 src="/src/pivotal.svg"
                 className="w-full h-full object-contain"
+              />
+            }
+          />
+
+          <ProjectCard
+            darkMode={darkMode}
+            title="attiny85 dev board"
+            description="An attiny85 development board with a builtin 3v3 output and power and general purpose LEDs. Comes with USB-A. "
+            technologies={["Python"]}
+            link="#about"
+            img={
+              <img
+                src="/src/attiny.jpg"
+                className="w-full h-full object-cover object-[0 -4em]"
+              />
+            }
+          />
+
+          <ProjectCard
+            darkMode={darkMode}
+            title="CERN Bulletin Archive"
+            description="No fuss Linear Programming solver with a friendly API. Uses the simplex algorithm."
+            technologies={["Python"]}
+            link="#about"
+            img={
+              <img
+                src="/src/bulletin2.png"
+                className="w-full h-full object-cover object-top-left"
               />
             }
           />
