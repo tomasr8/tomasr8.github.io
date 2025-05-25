@@ -15,7 +15,12 @@ export default function Projects({ darkMode }: { darkMode: boolean }) {
             description="A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, product filtering, and payment integration."
             technologies={["React", "Node.js", "MongoDB"]}
             link="#about"
-            img={null}
+            img={
+              <img
+                src="/src/pyjsx.png"
+                className="w-full h-full object-contain"
+              />
+            }
           />
 
           <ProjectCard

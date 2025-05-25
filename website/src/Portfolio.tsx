@@ -8,14 +8,14 @@ import Projects from "./Projects"
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(true)
 
   // Initialize darkMode based on user preference or system preference
   useEffect(() => {
     const isDarkMode =
       localStorage.getItem("darkMode") === "true" ||
       (window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+        !window.matchMedia("(prefers-color-scheme: light)").matches)
     setDarkMode(isDarkMode)
   }, [])
 
