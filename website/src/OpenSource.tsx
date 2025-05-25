@@ -121,7 +121,25 @@ export default function OpenSource() {
         </ul>
 
         <div className="text-center">
-          And many others including ruff, pyodide, ..
+          And many others including{" "}
+          <a
+            href="https://github.com/astral-sh/ruff"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium transition-colors"
+          >
+            ruff
+          </a>
+          ,{" "}
+          <a
+            href="https://github.com/pyodide/pyodide"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium transition-colors"
+          >
+            pyodide
+          </a>
+          , ..
         </div>
       </div>
     </section>

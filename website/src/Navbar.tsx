@@ -30,6 +30,12 @@ export default function Navbar({
               About
             </a>
             <a
+              href="#oss"
+              className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              Open Source
+            </a>
+            <a
               href="#projects"
               className="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
             >
@@ -78,22 +84,16 @@ export default function Navbar({
               About
             </a>
             <a
-              href="#skills"
+              href="#oss"
               className="block px-3 py-2 rounded-md hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-slate-700 dark:hover:text-indigo-400 transition-colors"
             >
-              Skills
+              Open Source
             </a>
             <a
               href="#projects"
               className="block px-3 py-2 rounded-md hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-slate-700 dark:hover:text-indigo-400 transition-colors"
             >
               Projects
-            </a>
-            <a
-              href="#contact"
-              className="block px-3 py-2 rounded-md hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-slate-700 dark:hover:text-indigo-400 transition-colors"
-            >
-              Contact
             </a>
           </div>
         </div>
