@@ -127,18 +127,3 @@ export default function OpenSource() {
     </section>
   )
 }
-
-{
-  /* <div className="flex">
-  <a
-    href="#"
-    className={`p-2 ${
-      darkMode
-        ? "bg-slate-700 text-indigo-400 hover:bg-slate-600"
-        : "bg-indigo-100 text-indigo-600 hover:bg-indigo-200"
-    } rounded-full transition-colors duration-300`}
-  >
-    <GitPullRequestArrow className="w-5 h-5" />
-  </a>
-</div> */
-}
