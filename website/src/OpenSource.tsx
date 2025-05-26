@@ -28,22 +28,24 @@ function ProjectItem({
 }) {
   return (
     <li className="py-3 sm:py-4">
-      <div className="flex flex-wrap items-center space-x-6">
-        <div className="shrink-0">{img}</div>
-        <div className="min-w-0">
-          <p>
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xl text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium transition-colors"
-            >
-              {project.name}
-            </a>
-          </p>
-          <p className="text-md text-slate-600 dark:text-slate-300 transition-colors duration-300">
-            {project.description}
-          </p>
+      <div className="flex flex-wrap items-center space-x-6 space-y-3 justify-between">
+        <div className="flex space-x-6 items-center">
+          <div className="shrink-0">{img}</div>
+          <div className="min-w-0">
+            <p>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium transition-colors"
+              >
+                {project.name}
+              </a>
+            </p>
+            <p className="text-md text-slate-600 dark:text-slate-300 transition-colors duration-300">
+              {project.description}
+            </p>
+          </div>
         </div>
         <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
           <ContribLink url={project.contribUrl} />
