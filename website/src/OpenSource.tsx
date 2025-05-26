@@ -28,9 +28,9 @@ function ProjectItem({
 }) {
   return (
     <li className="py-3 sm:py-4">
-      <div className="flex items-center space-x-6">
+      <div className="flex flex-wrap items-center space-x-6">
         <div className="shrink-0">{img}</div>
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0">
           <p>
             <a
               href={project.url}
