@@ -108,6 +108,23 @@ export default function Projects() {
           ))}
         </div>
 
+        <div className="flex mx-4 mt-8 justify-center">
+          <ProjectCard
+            className="basis-[50%]"
+            title="Macropad"
+            description="test"
+            technologies={["foo"]}
+            link="https://github.com/tomasr8/ida"
+            img={
+              <img
+                src="/src/ida.jpg"
+                className="w-full h-full object-cover object-[0em_-4em]"
+                alt="Ida macropad"
+              />
+            }
+          />
+        </div>
+
         <div className="mt-10 text-center">
           <a
             href="#"
@@ -122,24 +139,28 @@ export default function Projects() {
 }
 
 function ProjectCard({
+  className = "",
   title,
   description,
   technologies,
   link,
   img,
 }: {
+  className?: string
   title: string
   description: string
   technologies: string[]
   link: string
   img: ReactNode
 }) {
+  className += " bg-white dark:bg-slate-800 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
+
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-white dark:bg-slate-800 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
+      className={className}
     >
       <div className="h-48 bg-indigo-100 dark:bg-slate-700 rounded-md mb-4 flex items-center justify-center text-indigo-400 transition-colors duration-300">
         {img}

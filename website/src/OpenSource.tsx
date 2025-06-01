@@ -123,7 +123,7 @@ export default function OpenSource() {
         </ul>
 
         <div className="text-center">
-          And many others including{" "}
+          I also contributed a couple patches to{" "}
           <a
             href="https://github.com/astral-sh/ruff"
             target="_blank"
@@ -141,7 +141,16 @@ export default function OpenSource() {
           >
             pyodide
           </a>
-          , ..
+          ,{" "}
+          <a
+            href="https://github.com/dexie/Dexie.js"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium transition-colors"
+          >
+            dexie
+          </a>{" "}
+          and a couple more
         </div>
       </div>
     </section>
