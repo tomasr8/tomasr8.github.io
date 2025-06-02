@@ -144,7 +144,8 @@ function ProjectCard({
   link: string
   img: ReactNode
 }) {
-  className += " bg-white dark:bg-slate-800 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
+  className +=
+    " bg-white dark:bg-slate-800 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
 
   return (
     <a
