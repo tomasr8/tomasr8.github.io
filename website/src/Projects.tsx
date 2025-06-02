@@ -6,7 +6,7 @@ export default function Projects() {
       title: "PyJSX",
       description:
         "A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, product filtering, and payment integration.",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: ["Python"],
       link: "#about",
       img: (
         <img
@@ -34,7 +34,7 @@ export default function Projects() {
       title: "Just travelling through space..",
       description:
         "An immersive simulation of a ship traveling through space done using only 2D canvas to avoid having to use WebGL. Source here.",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: ["JS"],
       link: "#about",
       img: (
         <img
@@ -62,12 +62,12 @@ export default function Projects() {
       title: "attiny85 dev board",
       description:
         "An attiny85 development board with a builtin 3v3 output and power and general purpose LEDs. Comes with USB-A.",
-      technologies: ["Python"],
+      technologies: ["HW"],
       link: "#about",
       img: (
         <img
           src="/src/attiny.jpg"
-          className="w-full h-full object-cover object-[0 -4em]"
+          className="w-full h-full object-cover object-[0_-4em]"
           alt="attiny85 dev board image"
         />
       ),
@@ -76,7 +76,7 @@ export default function Projects() {
       title: "CERN Bulletin Archive",
       description:
         "A project to archive and make accessible the CERN Bulletin, a publication that documents the activities and achievements of CERN.",
-      technologies: ["Python"],
+      technologies: ["Python", "Flask", "PostgreSQL"],
       link: "#about",
       img: (
         <img
@@ -113,7 +113,7 @@ export default function Projects() {
             className="basis-[50%]"
             title="Macropad"
             description="test"
-            technologies={["foo"]}
+            technologies={["HW"]}
             link="https://github.com/tomasr8/ida"
             img={
               <img
@@ -123,15 +123,6 @@ export default function Projects() {
               />
             }
           />
-        </div>
-
-        <div className="mt-10 text-center">
-          <a
-            href="#"
-            className="text-indigo-600 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 font-medium transition-colors"
-          >
-            View all projects →
-          </a>
         </div>
       </div>
     </section>
