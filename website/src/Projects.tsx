@@ -26,7 +26,7 @@ export default function Projects() {
         <video
           src="src/example.mp4"
           controls
-          className="w-full h-full object-contain rounded-sm"
+          className="w-full h-full object-cover object-[-1.8em_0em] rounded-sm"
         ></video>
       ),
     },
@@ -145,7 +145,7 @@ function ProjectCard({
   img: ReactNode
 }) {
   className +=
-    " bg-white hover:bg-blue-100 dark:bg-slate-800 dark:hover:bg-slate-700 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
+    " bg-white hover:bg-indigo-100 dark:bg-slate-800 dark:hover:bg-slate-700 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
 
   return (
     <a
