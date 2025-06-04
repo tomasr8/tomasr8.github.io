@@ -63,7 +63,7 @@ export default function OpenSource() {
       description: "core developer for the last 4+ years",
       contribUrl:
         "https://github.com/search?q=org%3Aindico+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/indico.svg",
+      imgSrc: "/src/media/indico.svg",
     },
     {
       url: "https://github.com/python/cpython",
@@ -71,7 +71,7 @@ export default function OpenSource() {
       description: "contributor and member of the triage team",
       contribUrl:
         "https://github.com/search?q=org%3Apython+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/python.svg",
+      imgSrc: "/src/media/python.svg",
     },
     {
       url: "https://github.com/python-babel/babel",
@@ -79,7 +79,7 @@ export default function OpenSource() {
       description: "contributor",
       contribUrl:
         "https://github.com/search?q=org%3Apython-babel+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/babel.png",
+      imgSrc: "/src/media/babel.png",
     },
     {
       url: "https://github.com/pycqa/flake8-pyi",
@@ -87,7 +87,7 @@ export default function OpenSource() {
       description: "contributor",
       contribUrl:
         "https://github.com/search?q=org%3Apycqa+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/pycqa.jpeg",
+      imgSrc: "/src/media/pycqa.jpeg",
     },
   ]
 

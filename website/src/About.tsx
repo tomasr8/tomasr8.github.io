@@ -42,7 +42,7 @@ export default function About() {
           <div className="flex-1 flex justify-center">
             <div className="w-64 h-64 rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400 flex items-center justify-center text-6xl font-bold transition-colors duration-300">
               <img
-                src="/src/me.jpg"
+                src="/src/media/me.jpg"
                 alt="Tomas Roun"
                 className="rounded-full w-64 h-64 object-cover"
               />

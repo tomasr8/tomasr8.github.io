@@ -10,7 +10,7 @@ export default function Projects() {
       link: "#about",
       img: (
         <img
-          src="/src/pyjsx.png"
+          src="/src/media/pyjsx.png"
           className="w-full h-full object-contain rounded-sm"
           alt="PyJSX project screenshot"
         />
@@ -24,7 +24,7 @@ export default function Projects() {
       link: "#about",
       img: (
         <video
-          src="src/example.mp4"
+          src="src/media/example.mp4"
           controls
           className="w-full h-full object-cover object-[-1.8em_0em] rounded-sm"
         ></video>
@@ -38,7 +38,7 @@ export default function Projects() {
       link: "#about",
       img: (
         <img
-          src="/src/superluminal.gif"
+          src="/src/media/superluminal.gif"
           className="w-full h-full object-cover rounded-sm"
           alt="Space travel simulation gif"
         />
@@ -52,7 +52,7 @@ export default function Projects() {
       link: "#about",
       img: (
         <img
-          src="/src/pivotal.svg"
+          src="/src/media/pivotal.svg"
           className="w-full h-full object-contain rounded-sm"
           alt="LP Solver logo"
         />
@@ -66,7 +66,7 @@ export default function Projects() {
       link: "#about",
       img: (
         <img
-          src="/src/attiny.jpg"
+          src="/src/media/attiny.jpg"
           className="w-full h-full object-cover object-[0_-4em] rounded-sm"
           alt="attiny85 dev board image"
         />
@@ -80,7 +80,7 @@ export default function Projects() {
       link: "#about",
       img: (
         <img
-          src="/src/bulletin2.png"
+          src="/src/media/bulletin2.png"
           className="w-full h-full object-cover object-top-left rounded-sm"
           alt="CERN Bulletin Archive screenshot"
         />
@@ -117,7 +117,7 @@ export default function Projects() {
             link="https://github.com/tomasr8/ida"
             img={
               <img
-                src="/src/ida.jpg"
+                src="/src/media/ida.jpg"
                 className="w-full h-full object-cover object-[0em_-4em] rounded-sm"
                 alt="Ida macropad"
               />
