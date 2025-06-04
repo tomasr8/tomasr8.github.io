@@ -11,7 +11,7 @@ export default function Projects() {
       img: (
         <img
           src="/src/pyjsx.png"
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain rounded-sm"
           alt="PyJSX project screenshot"
         />
       ),
@@ -26,7 +26,7 @@ export default function Projects() {
         <video
           src="src/example.mp4"
           controls
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain rounded-sm"
         ></video>
       ),
     },
@@ -39,7 +39,7 @@ export default function Projects() {
       img: (
         <img
           src="/src/superluminal.gif"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-sm"
           alt="Space travel simulation gif"
         />
       ),
@@ -53,7 +53,7 @@ export default function Projects() {
       img: (
         <img
           src="/src/pivotal.svg"
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain rounded-sm"
           alt="LP Solver logo"
         />
       ),
@@ -67,7 +67,7 @@ export default function Projects() {
       img: (
         <img
           src="/src/attiny.jpg"
-          className="w-full h-full object-cover object-[0_-4em]"
+          className="w-full h-full object-cover object-[0_-4em] rounded-sm"
           alt="attiny85 dev board image"
         />
       ),
@@ -81,7 +81,7 @@ export default function Projects() {
       img: (
         <img
           src="/src/bulletin2.png"
-          className="w-full h-full object-cover object-top-left"
+          className="w-full h-full object-cover object-top-left rounded-sm"
           alt="CERN Bulletin Archive screenshot"
         />
       ),
@@ -118,7 +118,7 @@ export default function Projects() {
             img={
               <img
                 src="/src/ida.jpg"
-                className="w-full h-full object-cover object-[0em_-4em]"
+                className="w-full h-full object-cover object-[0em_-4em] rounded-sm"
                 alt="Ida macropad"
               />
             }
@@ -145,7 +145,7 @@ function ProjectCard({
   img: ReactNode
 }) {
   className +=
-    " bg-white dark:bg-slate-800 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
+    " bg-white hover:bg-blue-100 dark:bg-slate-800 dark:hover:bg-slate-700 dark:shadow-slate-700/30 p-6 rounded-lg shadow-md transition-colors duration-300"
 
   return (
     <a
@@ -165,7 +165,7 @@ function ProjectCard({
         {technologies.map(tech => (
           <span
             key={tech}
-            className="px-3 py-1 bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400 text-sm rounded-full transition-colors duration-300"
+            className="px-3 py-1 bg-indigo-200/50 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400 text-sm rounded-full transition-colors duration-300"
           >
             {tech}
           </span>
