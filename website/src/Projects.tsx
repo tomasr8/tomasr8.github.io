@@ -5,9 +5,9 @@ export default function Projects() {
     {
       title: "PyJSX",
       description:
-        "A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, product filtering, and payment integration.",
+        "Write JSX directly in Python",
       technologies: ["Python"],
-      link: "#about",
+      link: "https://github.com/tomasr8/pyjsx",
       img: (
         <img
           src="/src/media/pyjsx.png"
@@ -17,11 +17,11 @@ export default function Projects() {
       ),
     },
     {
-      title: "QR codes from scratch with OpenCV and Python",
+      title: "QR codes from scratch",
       description:
-        "A library and a CLI tool for generating and decoding a custom matrix barcode similar to a QR code.",
+        "Generating and decoding a custom matrix barcode similar to a QR code",
       technologies: ["Python", "OpenCV"],
-      link: "#about",
+      link: "https://github.com/tomasr8/sr-code",
       img: (
         <video
           src="src/media/example.mp4"
@@ -31,11 +31,11 @@ export default function Projects() {
       ),
     },
     {
-      title: "Just travelling through space..",
+      title: "Superluminal",
       description:
-        "An immersive simulation of a ship traveling through space done using only 2D canvas to avoid having to use WebGL. Source here.",
+        "An immersive simulation of a ship traveling at light speed",
       technologies: ["JS"],
-      link: "#about",
+      link: "https://tomasr8.github.io/superluminal",
       img: (
         <img
           src="/src/media/superluminal.gif"
@@ -47,9 +47,9 @@ export default function Projects() {
     {
       title: "LP Solver",
       description:
-        "No fuss Linear Programming solver with a friendly API. Uses the simplex algorithm.",
+        "No fuss Linear Programming solver with a friendly API",
       technologies: ["Python"],
-      link: "#about",
+      link: "https://github.com/tomasr8/pivotal",
       img: (
         <img
           src="/src/media/pivotal.svg"
@@ -59,11 +59,11 @@ export default function Projects() {
       ),
     },
     {
-      title: "attiny85 dev board",
+      title: "attiny85 Dev Board",
       description:
-        "An attiny85 development board with a builtin 3v3 output and power and general purpose LEDs. Comes with USB-A.",
-      technologies: ["HW"],
-      link: "#about",
+        "An attiny85 development board with programmable LEDs, 3v3 output and USB-A",
+      technologies: ["PCB Design"],
+      link: "https://github.com/tomasr8/attiny85-dev-board",
       img: (
         <img
           src="/src/media/attiny.jpg"
@@ -75,9 +75,9 @@ export default function Projects() {
     {
       title: "CERN Bulletin Archive",
       description:
-        "A project to archive and make accessible the CERN Bulletin, a publication that documents the activities and achievements of CERN.",
-      technologies: ["Python", "Flask", "PostgreSQL"],
-      link: "#about",
+        "An online archive of the CERN Bulletin, a weekly publication covering news and events going back to the 1960s",
+      technologies: ["Python", "Flask", "React", "PostgreSQL"],
+      link: "https://bulletin.app.cern.ch",
       img: (
         <img
           src="/src/media/bulletin2.png"
@@ -112,14 +112,14 @@ export default function Projects() {
           <ProjectCard
             className="basis-[50%]"
             title="Macropad"
-            description="test"
-            technologies={["HW"]}
+            description="DIY 3-key macropad"
+            technologies={["3D Modeling", "PCB Design"]}
             link="https://github.com/tomasr8/ida"
             img={
               <img
                 src="/src/media/ida.jpg"
                 className="w-full h-full object-cover object-[0em_-4em] rounded-sm"
-                alt="Ida macropad"
+                alt="macropad"
               />
             }
           />

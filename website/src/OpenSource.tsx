@@ -60,7 +60,7 @@ export default function OpenSource() {
     {
       url: "https://github.com/indico/indico",
       name: "Indico",
-      description: "core developer for the last 4+ years",
+      description: "Maintainer",
       contribUrl:
         "https://github.com/search?q=org%3Aindico+author%3Atomasr8+type%3Apr&type=pullrequests",
       imgSrc: "/src/media/indico.svg",
@@ -68,7 +68,7 @@ export default function OpenSource() {
     {
       url: "https://github.com/python/cpython",
       name: "Python",
-      description: "contributor and member of the triage team",
+      description: "Core Developer",
       contribUrl:
         "https://github.com/search?q=org%3Apython+author%3Atomasr8+type%3Apr&type=pullrequests",
       imgSrc: "/src/media/python.svg",
@@ -76,7 +76,7 @@ export default function OpenSource() {
     {
       url: "https://github.com/python-babel/babel",
       name: "Babel",
-      description: "contributor",
+      description: "Contributor",
       contribUrl:
         "https://github.com/search?q=org%3Apython-babel+author%3Atomasr8+type%3Apr&type=pullrequests",
       imgSrc: "/src/media/babel.png",
@@ -84,7 +84,7 @@ export default function OpenSource() {
     {
       url: "https://github.com/pycqa/flake8-pyi",
       name: "flake8",
-      description: "contributor",
+      description: "Contributor",
       contribUrl:
         "https://github.com/search?q=org%3Apycqa+author%3Atomasr8+type%3Apr&type=pullrequests",
       imgSrc: "/src/media/pycqa.jpeg",

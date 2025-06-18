@@ -14,25 +14,30 @@ export default function About() {
               Full Stack Developer
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-xl transition-colors duration-300">
-              I build scalable web applications with modern technologies.
-              Passionate about crafting clean code and creating intuitive user
-              experiences.
+              I am a software engineer with background in CompSci, AI & Robotics.
+              I currently work on <b>Open Source at CERN</b>.
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://github.com/tomasr8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-indigo-100 text-indigo-600 hover:bg-indigo-200 dark:bg-slate-700 dark:text-indigo-400 dark:hover:bg-slate-600 rounded-full transition-colors duration-300"
               >
                 <Github size={24} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/tomas-roun-97b2a714b/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-indigo-100 text-indigo-600 hover:bg-indigo-200 dark:bg-slate-700 dark:text-indigo-400 dark:hover:bg-slate-600 rounded-full transition-colors duration-300"
               >
                 <Linkedin size={24} />
               </a>
               <a
-                href="#"
+                href="mailto:tomas.roun8+tomasr.dev@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-indigo-100 text-indigo-600 hover:bg-indigo-200 dark:bg-slate-700 dark:text-indigo-400 dark:hover:bg-slate-600 rounded-full transition-colors duration-300"
               >
                 <Mail size={24} />
