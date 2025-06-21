@@ -29,11 +29,12 @@ jobs:
 
       # Build website
       - name: Build website
+        cwd: ${{ github.workspace }}/website
         run: |
           npm ci
-          npm run build
-          mv superluminal public/superluminal
-          mv public _site
+          npm build
+          mv ../superluminal dist/superluminal
+          mv dist ../_site
 
       - uses: actions/upload-pages-artifact@v1
       - uses: actions/deploy-pages@v2
