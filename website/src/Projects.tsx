@@ -113,9 +113,9 @@ export default function Projects() {
           ))}
         </div>
 
-        <div className="flex mx-4 mt-8 justify-center">
+        <div className="flex md:mx-4 mt-8 justify-center">
           <ProjectCard
-            className="basis-[50%]"
+            className="basis-[100%] md:basis-[50%]"
             title="Macropad"
             description="DIY 3-key macropad"
             technologies={["3D Modeling", "PCB Design"]}
