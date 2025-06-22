@@ -12,12 +12,13 @@ export default function About() {
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Hi, I&apos;m Tomas
             </h1>
-            <h2 className="text-2xl md:text-3xl text-indigo-500 font-medium mb-6">
-              Full Stack Developer
-            </h2>
+            {/* <h2 className="text-2xl md:text-3xl text-indigo-500 font-medium mb-6">
+              Full-Stack Software Engineer
+            </h2> */}
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-xl transition-colors duration-300">
-              I am a software engineer with background in CompSci, AI &
-              Robotics. I currently work on <b>Open Source at CERN</b>.
+              I am a Full-Stack Software Engineer with background in CompSci, AI
+              & Robotics. I currently work on <b>Open Source at CERN</b>. I am
+              also <b>Python Core Developer</b>.
             </p>
             <div className="flex gap-4">
               <a
