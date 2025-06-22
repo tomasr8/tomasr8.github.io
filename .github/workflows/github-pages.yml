@@ -29,7 +29,7 @@ jobs:
 
       # Build website
       - name: Build website
-        cwd: ${{ github.workspace }}/website
+        working-directory: ./website
         run: |
           npm ci
           npm build
