@@ -1,16 +1,23 @@
 import React, { ReactNode } from "react"
 
+import pyjsx from "src/media/pyjsx.png"
+import srCode from "src/media/example.mp4"
+import superluminal from "src/media/superluminal.gif"
+import pivotal from "src/media/pivotal.svg"
+import attiny85 from "src/media/attiny.jpg"
+import bulletin from "src/media/bulletin.png"
+import ida from "src/media/ida.png"
+
 export default function Projects() {
   const projects = [
     {
       title: "PyJSX",
-      description:
-        "Write JSX directly in Python",
+      description: "Write JSX directly in Python",
       technologies: ["Python"],
       link: "https://github.com/tomasr8/pyjsx",
       img: (
         <img
-          src="/src/media/pyjsx.png"
+          src={pyjsx}
           className="w-full h-full object-contain rounded-sm"
           alt="PyJSX project screenshot"
         />
@@ -24,7 +31,7 @@ export default function Projects() {
       link: "https://github.com/tomasr8/sr-code",
       img: (
         <video
-          src="src/media/example.mp4"
+          src={srCode}
           controls
           className="w-full h-full object-cover object-[-1.8em_0em] rounded-sm"
         ></video>
@@ -32,13 +39,12 @@ export default function Projects() {
     },
     {
       title: "Superluminal",
-      description:
-        "An immersive simulation of a ship traveling at light speed",
+      description: "An immersive simulation of a ship traveling at light speed",
       technologies: ["JS"],
       link: "https://tomasr8.github.io/superluminal",
       img: (
         <img
-          src="/src/media/superluminal.gif"
+          src={superluminal}
           className="w-full h-full object-cover rounded-sm"
           alt="Space travel simulation gif"
         />
@@ -46,13 +52,12 @@ export default function Projects() {
     },
     {
       title: "LP Solver",
-      description:
-        "No fuss Linear Programming solver with a friendly API",
+      description: "No fuss Linear Programming solver with a friendly API",
       technologies: ["Python"],
       link: "https://github.com/tomasr8/pivotal",
       img: (
         <img
-          src="/src/media/pivotal.svg"
+          src={pivotal}
           className="w-full h-full object-contain rounded-sm"
           alt="LP Solver logo"
         />
@@ -66,7 +71,7 @@ export default function Projects() {
       link: "https://github.com/tomasr8/attiny85-dev-board",
       img: (
         <img
-          src="/src/media/attiny.jpg"
+          src={attiny85}
           className="w-full h-full object-cover object-[0_-4em] rounded-sm"
           alt="attiny85 dev board image"
         />
@@ -80,7 +85,7 @@ export default function Projects() {
       link: "https://bulletin.app.cern.ch",
       img: (
         <img
-          src="/src/media/bulletin2.png"
+          src={bulletin}
           className="w-full h-full object-cover object-top-left rounded-sm"
           alt="CERN Bulletin Archive screenshot"
         />
@@ -117,7 +122,7 @@ export default function Projects() {
             link="https://github.com/tomasr8/ida"
             img={
               <img
-                src="/src/media/ida.jpg"
+                src={ida}
                 className="w-full h-full object-cover object-[0em_-4em] rounded-sm"
                 alt="macropad"
               />

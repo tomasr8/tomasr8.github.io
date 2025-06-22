@@ -1,6 +1,8 @@
 import React from "react"
 import { Github, Linkedin, Mail } from "lucide-react"
 
+import me from "src/media/me.jpg"
+
 export default function About() {
   return (
     <section id="about" className="pt-24 pb-16 md:pt-32">
@@ -14,8 +16,8 @@ export default function About() {
               Full Stack Developer
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-xl transition-colors duration-300">
-              I am a software engineer with background in CompSci, AI & Robotics.
-              I currently work on <b>Open Source at CERN</b>.
+              I am a software engineer with background in CompSci, AI &
+              Robotics. I currently work on <b>Open Source at CERN</b>.
             </p>
             <div className="flex gap-4">
               <a
@@ -27,7 +29,7 @@ export default function About() {
                 <Github size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/tomas-roun-97b2a714b/"
+                href="https://www.linkedin.com/in/tomas-roun"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-indigo-100 text-indigo-600 hover:bg-indigo-200 dark:bg-slate-700 dark:text-indigo-400 dark:hover:bg-slate-600 rounded-full transition-colors duration-300"
@@ -47,7 +49,7 @@ export default function About() {
           <div className="flex-1 flex justify-center">
             <div className="w-64 h-64 rounded-full bg-indigo-100 text-indigo-600 dark:bg-indigo-900/50 dark:text-indigo-400 flex items-center justify-center text-6xl font-bold transition-colors duration-300">
               <img
-                src="/src/media/me.jpg"
+                src={me}
                 alt="Tomas Roun"
                 className="rounded-full w-64 h-64 object-cover"
               />

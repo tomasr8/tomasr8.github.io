@@ -1,6 +1,11 @@
 import React from "react"
 import { GitPullRequestArrow } from "lucide-react"
 
+import indico from "src/media/indico.svg"
+import python from "src/media/python.svg"
+import babel from "src/media/babel.png"
+import pycqa from "src/media/pycqa.jpeg"
+
 function ContribLink({ url }: { url: string }) {
   return (
     <a
@@ -63,7 +68,7 @@ export default function OpenSource() {
       description: "Maintainer",
       contribUrl:
         "https://github.com/search?q=org%3Aindico+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/media/indico.svg",
+      imgSrc: indico,
     },
     {
       url: "https://github.com/python/cpython",
@@ -71,7 +76,7 @@ export default function OpenSource() {
       description: "Core Developer",
       contribUrl:
         "https://github.com/search?q=org%3Apython+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/media/python.svg",
+      imgSrc: python,
     },
     {
       url: "https://github.com/python-babel/babel",
@@ -79,7 +84,7 @@ export default function OpenSource() {
       description: "Contributor",
       contribUrl:
         "https://github.com/search?q=org%3Apython-babel+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/media/babel.png",
+      imgSrc: babel,
     },
     {
       url: "https://github.com/pycqa/flake8-pyi",
@@ -87,7 +92,7 @@ export default function OpenSource() {
       description: "Contributor",
       contribUrl:
         "https://github.com/search?q=org%3Apycqa+author%3Atomasr8+type%3Apr&type=pullrequests",
-      imgSrc: "/src/media/pycqa.jpeg",
+      imgSrc: pycqa,
     },
   ]
 
