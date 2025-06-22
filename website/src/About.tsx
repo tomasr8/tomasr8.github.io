@@ -1,7 +1,7 @@
 import React from "react"
 import { Github, Linkedin, Mail } from "lucide-react"
 
-import me from "src/media/me.jpg"
+import me from "./media/me.jpg"
 
 export default function About() {
   return (

@@ -1,10 +1,10 @@
 import React from "react"
 import { GitPullRequestArrow } from "lucide-react"
 
-import indico from "src/media/indico.svg"
-import python from "src/media/python.svg"
-import babel from "src/media/babel.png"
-import pycqa from "src/media/pycqa.jpeg"
+import indico from "./media/indico.svg"
+import python from "./media/python.svg"
+import babel from "./media/babel.png"
+import pycqa from "./media/pycqa.jpeg"
 
 function ContribLink({ url }: { url: string }) {
   return (
