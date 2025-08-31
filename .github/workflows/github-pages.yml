@@ -22,6 +22,7 @@ jobs:
           npm ci
           npm run build
           mv ../superluminal dist/superluminal
+          mv ../flashcards dist/flashcards
 
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
