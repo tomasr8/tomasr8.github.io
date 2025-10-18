@@ -14,11 +14,10 @@ import { Moon, Sun } from "lucide-react"
 export default function App() {
     const [darkMode, setDarkMode] = useState(false)
 
-    // Add your weight entries here
     const entries = [
-        { id: "1", date: "2025-10-01", weight: 3.2, notes: "Birth weight" },
-        { id: "2", date: "2025-10-03", weight: 3.0, notes: "Leaving hospital" },
-        { id: "3", date: "2025-10-08", weight: 3.1, notes: "Follow-up check" },
+        { id: "1", date: "2025-10-10", weight: 2.882, notes: "Birth weight" },
+        { id: "2", date: "2025-10-16", weight: 2.732, notes: "Leaving hospital" },
+        { id: "3", date: "2025-10-17", weight: 2.830, notes: "Follow-up check" },
     ]
 
     const sortedEntries = [...entries].sort(
@@ -34,6 +33,14 @@ export default function App() {
         fullDate: entry.date,
     }))
 
+    // Calculate Y-axis range with padding
+    const weights = sortedEntries.map(e => e.weight)
+    const minWeight = Math.min(...weights)
+    const maxWeight = Math.max(...weights)
+    const padding = (maxWeight - minWeight) * 0.2 || 0.5 // 20% padding or 0.5kg minimum
+    const yAxisMin = Math.max(0, minWeight - padding)
+    const yAxisMax = maxWeight + padding
+
     const bgClass = darkMode ? "bg-gray-900" : "bg-gray-50"
     const cardClass = darkMode ? "bg-gray-800" : "bg-white"
     const textClass = darkMode ? "text-gray-100" : "text-gray-900"
@@ -42,18 +49,15 @@ export default function App() {
 
     return (
         <div
-            className={`min-h-screen w-screen ${bgClass} transition-colors duration-200 flex flex-row items-center justify-center`}
+            className={`min-h-screen ${bgClass} transition-colors duration-200`}
         >
             <div className="max-w-6xl mx-auto p-6">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                     <div>
                         <h1 className={`text-3xl font-bold ${textClass}`}>
-                            Baby Growth Tracker
+                            Lucinka
                         </h1>
-                        <p className={textSecondaryClass}>
-                            Tracking precious moments and milestones
-                        </p>
                     </div>
                     <button
                         onClick={() => setDarkMode(!darkMode)}
@@ -130,6 +134,7 @@ export default function App() {
                             />
                             <YAxis
                                 stroke={darkMode ? "#9ca3af" : "#6b7280"}
+                                domain={[yAxisMin, yAxisMax]}
                                 label={{
                                     value: "Weight (kg)",
                                     angle: -90,
