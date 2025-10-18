@@ -122,7 +122,7 @@ export default function App() {
                         className={`${cardClass} rounded-lg border ${borderClass} p-6`}
                     >
                         <p className={textSecondaryClass}>
-                            Weight Change (since start)
+                            Weight Change (since birth)
                         </p>
                         <p className={`text-3xl font-bold ${textClass}`}>
                             {weightChange}
