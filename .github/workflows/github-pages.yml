@@ -24,6 +24,14 @@ jobs:
           mv ../superluminal dist/superluminal
           mv ../flashcards dist/flashcards
 
+      # Build Lucinka
+      - name: Build Lucinka
+        working-directory: ./lucie
+        run: |
+          npm ci
+          npm run build
+          mv dist ../website/dist/lucie
+
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v3
         with:
