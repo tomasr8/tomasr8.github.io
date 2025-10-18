@@ -12,7 +12,16 @@ import {
 import { Moon, Sun } from "lucide-react"
 
 export default function App() {
-    const [darkMode, setDarkMode] = useState(false)
+    const [darkMode, setDarkMode] = useState(
+        document.documentElement.classList.contains("dark")
+    )
+
+    const toggleDarkMode = () => {
+        const theme = darkMode ? "light" : "dark"
+        localStorage.setItem("theme", theme)
+        document.documentElement.classList.toggle("dark")
+        setDarkMode(d => !d)
+    }
 
     const entries = [
         { id: "1", date: "2025-10-10", weight: 2.882, notes: "Birth weight" },
@@ -22,7 +31,12 @@ export default function App() {
             weight: 2.732,
             notes: "Leaving hospital",
         },
-        { id: "3", date: "2025-10-17", weight: 2.83, notes: "Sage-femme visit" },
+        {
+            id: "3",
+            date: "2025-10-17",
+            weight: 2.83,
+            notes: "Sage-femme visit",
+        },
     ]
 
     const sortedEntries = [...entries].sort(
@@ -64,27 +78,19 @@ export default function App() {
     const yAxisMin = Math.max(0, minWeight - padding)
     const yAxisMax = maxWeight + padding
 
-    const bgClass = darkMode ? "bg-gray-900" : "bg-gray-50"
-    const cardClass = darkMode ? "bg-gray-800" : "bg-white"
-    const textClass = darkMode ? "text-gray-100" : "text-gray-900"
-    const textSecondaryClass = darkMode ? "text-gray-400" : "text-gray-600"
-    const borderClass = darkMode ? "border-gray-700" : "border-gray-200"
-
     return (
-        <div
-            className={`min-h-screen ${bgClass} transition-colors duration-200`}
-        >
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
             <div className="max-w-6xl mx-auto p-6">
                 {/* Header */}
                 <div className="flex items-center justify-between mb-8">
                     <div>
-                        <h1 className={`text-3xl font-bold ${textClass}`}>
+                        <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
                             Lucinka
                         </h1>
                     </div>
                     <button
-                        onClick={() => setDarkMode(!darkMode)}
-                        className={`p-3 rounded-lg ${cardClass} border ${borderClass} hover:opacity-80 transition-opacity`}
+                        onClick={toggleDarkMode}
+                        className="p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:opacity-80 transition-opacity"
                         aria-label="Toggle dark mode"
                     >
                         {darkMode ? (
@@ -98,10 +104,14 @@ export default function App() {
                 {/* Stats Summary */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                     <div
-                        className={`${cardClass} rounded-lg border ${borderClass} p-6`}
+                        className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6`}
                     >
-                        <p className={textSecondaryClass}>Current Weight</p>
-                        <p className={`text-3xl font-bold ${textClass}`}>
+                        <p className="text-gray-600 dark:text-gray-400">
+                            Current Weight
+                        </p>
+                        <p
+                            className={`text-3xl font-bold text-gray-900 dark:text-gray-100`}
+                        >
                             {sortedEntries[
                                 sortedEntries.length - 1
                             ]?.weight.toFixed(1)}{" "}
@@ -109,22 +119,26 @@ export default function App() {
                         </p>
                     </div>
                     <div
-                        className={`${cardClass} rounded-lg border ${borderClass} p-6`}
+                        className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6`}
                     >
-                        <p className={textSecondaryClass}>
+                        <p className="text-gray-600 dark:text-gray-400">
                             Weight Change (since last measurement)
                         </p>
-                        <p className={`text-3xl font-bold ${textClass}`}>
+                        <p
+                            className={`text-3xl font-bold text-gray-900 dark:text-gray-100`}
+                        >
                             {lastWeightChange}
                         </p>
                     </div>
                     <div
-                        className={`${cardClass} rounded-lg border ${borderClass} p-6`}
+                        className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6`}
                     >
-                        <p className={textSecondaryClass}>
+                        <p className="text-gray-600 dark:text-gray-400">
                             Weight Change (since birth)
                         </p>
-                        <p className={`text-3xl font-bold ${textClass}`}>
+                        <p
+                            className={`text-3xl font-bold text-gray-900 dark:text-gray-100`}
+                        >
                             {weightChange}
                         </p>
                     </div>
@@ -132,9 +146,11 @@ export default function App() {
 
                 {/* Chart */}
                 <div
-                    className={`${cardClass} rounded-lg border ${borderClass} p-6 mb-8`}
+                    className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6 mb-8`}
                 >
-                    <h2 className={`text-xl font-semibold mb-4 ${textClass}`}>
+                    <h2
+                        className={`text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100`}
+                    >
                         Weight Over Time
                     </h2>
                     <ResponsiveContainer width="100%" height={300}>
@@ -186,21 +202,23 @@ export default function App() {
 
                 {/* Entries List */}
                 <div
-                    className={`${cardClass} rounded-lg border ${borderClass} p-6`}
+                    className={`bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 p-6`}
                 >
-                    <h2 className={`text-xl font-semibold mb-4 ${textClass}`}>
+                    <h2
+                        className={`text-xl font-semibold mb-4 text-gray-900 dark:text-gray-100`}
+                    >
                         All Entries
                     </h2>
                     <div className="space-y-3">
                         {sortedEntries.map(entry => (
                             <div
                                 key={entry.id}
-                                className={`flex items-center justify-between p-4 border ${borderClass} rounded-lg`}
+                                className={`flex items-center justify-between p-4 border border-gray-200 dark:border-gray-700 rounded-lg`}
                             >
                                 <div className="flex-1">
                                     <div className="flex items-center gap-3">
                                         <p
-                                            className={`font-semibold ${textClass}`}
+                                            className={`font-semibold text-gray-900 dark:text-gray-100`}
                                         >
                                             {new Date(
                                                 entry.date
@@ -221,9 +239,7 @@ export default function App() {
                                         </span>
                                     </div>
                                     {entry.notes && (
-                                        <p
-                                            className={`text-sm mt-1 ${textSecondaryClass}`}
-                                        >
+                                        <p className="text-sm mt-1 text-gray-600 dark:text-gray-400">
                                             {entry.notes}
                                         </p>
                                     )}
