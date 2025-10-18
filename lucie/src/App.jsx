@@ -16,8 +16,13 @@ export default function App() {
 
     const entries = [
         { id: "1", date: "2025-10-10", weight: 2.882, notes: "Birth weight" },
-        { id: "2", date: "2025-10-16", weight: 2.732, notes: "Leaving hospital" },
-        { id: "3", date: "2025-10-17", weight: 2.830, notes: "Follow-up check" },
+        {
+            id: "2",
+            date: "2025-10-16",
+            weight: 2.732,
+            notes: "Leaving hospital",
+        },
+        { id: "3", date: "2025-10-17", weight: 2.83, notes: "Sage-femme visit" },
     ]
 
     const sortedEntries = [...entries].sort(
@@ -25,13 +30,31 @@ export default function App() {
     )
 
     const chartData = sortedEntries.map(entry => ({
-        date: new Date(entry.date).toLocaleDateString("en-US", {
+        date: new Date(entry.date).toLocaleDateString("en-GB", {
             month: "short",
             day: "numeric",
         }),
         weight: entry.weight,
         fullDate: entry.date,
     }))
+
+    let weightChange = "N/A"
+    if (sortedEntries.length > 1) {
+        const first = sortedEntries[0].weight
+        const last = sortedEntries[sortedEntries.length - 1].weight
+        const diff = (last - first) * 1000
+        const sign = diff >= 0 ? "+" : ""
+        weightChange = `${sign}${diff.toFixed(0)}g`
+    }
+
+    let lastWeightChange = "N/A"
+    if (sortedEntries.length > 1) {
+        const last = sortedEntries.at(-1).weight
+        const secondToLast = sortedEntries.at(-2).weight
+        const diff = (last - secondToLast) * 1000
+        const sign = diff >= 0 ? "+" : ""
+        lastWeightChange = `${sign}${diff.toFixed(0)}g`
+    }
 
     // Calculate Y-axis range with padding
     const weights = sortedEntries.map(e => e.weight)
@@ -88,29 +111,21 @@ export default function App() {
                     <div
                         className={`${cardClass} rounded-lg border ${borderClass} p-6`}
                     >
-                        <p className={textSecondaryClass}>Weight Change</p>
+                        <p className={textSecondaryClass}>
+                            Weight Change (since last measurement)
+                        </p>
                         <p className={`text-3xl font-bold ${textClass}`}>
-                            {sortedEntries.length > 1
-                                ? `${
-                                      sortedEntries[sortedEntries.length - 1]
-                                          .weight -
-                                          sortedEntries[0].weight >=
-                                      0
-                                          ? "+"
-                                          : ""
-                                  }${(
-                                      sortedEntries[sortedEntries.length - 1]
-                                          .weight - sortedEntries[0].weight
-                                  ).toFixed(2)} kg`
-                                : "N/A"}
+                            {lastWeightChange}
                         </p>
                     </div>
                     <div
                         className={`${cardClass} rounded-lg border ${borderClass} p-6`}
                     >
-                        <p className={textSecondaryClass}>Total Entries</p>
+                        <p className={textSecondaryClass}>
+                            Weight Change (since start)
+                        </p>
                         <p className={`text-3xl font-bold ${textClass}`}>
-                            {sortedEntries.length}
+                            {weightChange}
                         </p>
                     </div>
                 </div>
@@ -141,6 +156,7 @@ export default function App() {
                                     position: "insideLeft",
                                     fill: darkMode ? "#9ca3af" : "#6b7280",
                                 }}
+                                tickFormatter={value => value.toFixed(2)}
                             />
                             <Tooltip
                                 contentStyle={{
@@ -153,6 +169,7 @@ export default function App() {
                                     borderRadius: "0.5rem",
                                     color: darkMode ? "#f3f4f6" : "#111827",
                                 }}
+                                formatter={value => value.toFixed(2)}
                             />
                             <Legend />
                             <Line
@@ -187,20 +204,20 @@ export default function App() {
                                         >
                                             {new Date(
                                                 entry.date
-                                            ).toLocaleDateString("en-US", {
+                                            ).toLocaleDateString("en-GB", {
                                                 year: "numeric",
                                                 month: "long",
                                                 day: "numeric",
                                             })}
                                         </p>
                                         <span
-                                            className={`px-3 py-1 bg-violet-100 text-violet-700 rounded-full text-sm font-medium ${
+                                            className={`px-3 py-1 rounded-full text-sm font-medium ${
                                                 darkMode
                                                     ? "bg-violet-900 text-violet-300"
-                                                    : ""
+                                                    : "bg-violet-100 text-violet-700"
                                             }`}
                                         >
-                                            {entry.weight} kg
+                                            {entry.weight.toFixed(2)}kg
                                         </span>
                                     </div>
                                     {entry.notes && (
