@@ -120,7 +120,7 @@ export default function App() {
                         >
                             {sortedEntries[
                                 sortedEntries.length - 1
-                            ]?.weight.toFixed(1)}{" "}
+                            ]?.weight.toFixed(2)}
                             kg
                         </p>
                     </div>
