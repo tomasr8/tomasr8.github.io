@@ -24,17 +24,23 @@ export default function App() {
     }
 
     const entries = [
-        { id: "1", date: "2025-10-10", weight: 2.882, notes: "Birth weight" },
+        { id: 1, date: "2025-10-10", weight: 2.882, notes: "Birth weight" },
         {
-            id: "2",
+            id: 2,
             date: "2025-10-16",
             weight: 2.732,
             notes: "Leaving hospital",
         },
         {
-            id: "3",
+            id: 3,
             date: "2025-10-17",
             weight: 2.83,
+            notes: "Sage-femme visit",
+        },
+        {
+            id: 4,
+            date: "2025-10-19",
+            weight: 2.965,
             notes: "Sage-femme visit",
         },
     ]
