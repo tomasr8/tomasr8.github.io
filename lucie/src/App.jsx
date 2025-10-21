@@ -43,6 +43,12 @@ export default function App() {
             weight: 2.965,
             notes: "Sage-femme visit",
         },
+        {
+            id: 5,
+            date: "2025-10-21",
+            weight: 3.060,
+            notes: "Sage-femme visit",
+        }
     ]
 
     const sortedEntries = [...entries].sort(
