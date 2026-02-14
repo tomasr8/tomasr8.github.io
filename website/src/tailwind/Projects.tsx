@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react"
 
-import pyjsx from "./media/pyjsx.png"
-import srCode from "./media/example.mp4"
-import superluminal from "./media/superluminal.gif"
-import pivotal from "./media/pivotal.svg"
-import attiny85 from "./media/attiny.jpg"
-import bulletin from "./media/bulletin.png"
-import ida from "./media/ida.jpg"
+import pyjsx from "../media/pyjsx.png"
+import srCode from "../media/example.mp4"
+import superluminal from "../media/superluminal.gif"
+import pivotal from "../media/pivotal.svg"
+import attiny85 from "../media/attiny.jpg"
+import bulletin from "../media/bulletin.png"
+import ida from "../media/ida.jpg"
 
 export default function Projects() {
   const projects = [

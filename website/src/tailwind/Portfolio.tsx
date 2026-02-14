@@ -5,7 +5,7 @@ import Navbar from "./Navbar"
 import About from "./About"
 import OpenSource from "./OpenSource"
 import Projects from "./Projects"
-import { AppContextProvider } from "./AppContext"
+import { AppContextProvider } from "../AppContext"
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)

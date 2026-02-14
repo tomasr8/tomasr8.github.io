@@ -14,16 +14,15 @@ export const AppContext = createContext<AppContextType>({
   toggleTheme: () => {},
 })
 
-function getDefaultTheme() {
-  const isDarkMode =
-    localStorage.getItem("theme") === "dark" ||
-    (window.matchMedia &&
-      !window.matchMedia("(prefers-color-scheme: light)").matches)
-  return isDarkMode ? "dark" : "light"
-}
-
-function storeTheme(theme: Theme) {
-  localStorage.setItem("theme", theme)
+function getDefaultTheme(): Theme {
+  const stored = localStorage.getItem("theme")
+  if (stored === "light" || stored === "dark") {
+    return stored
+  }
+  if (window.matchMedia?.("(prefers-color-scheme: dark)").matches) {
+    return "dark"
+  }
+  return "light"
 }
 
 export function AppContextProvider({
@@ -34,8 +33,11 @@ export function AppContextProvider({
   const [theme, setTheme] = useState<Theme>(getDefaultTheme())
 
   useEffect(() => {
+    // Set both mechanisms so it works for Tailwind (.dark class)
+    // and mono.css (data-theme attribute)
     document.documentElement.classList.toggle("dark", theme === "dark")
-    storeTheme(theme)
+    document.documentElement.setAttribute("data-theme", theme)
+    localStorage.setItem("theme", theme)
   }, [theme])
 
   const toggleTheme = () => {
